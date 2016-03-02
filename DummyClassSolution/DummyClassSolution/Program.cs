@@ -14,6 +14,7 @@ namespace DummyClassSolution
         [STAThread]
         static void Main()
         {
+            DummyClass Dummy1 = new DummyClass();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
