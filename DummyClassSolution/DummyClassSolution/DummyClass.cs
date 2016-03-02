@@ -69,14 +69,15 @@ namespace DummyClassSolution
         {
             bool result = false;
 
-            foreach(string item in NameList)
+            foreach (string item in NameList)
             {
-                bool match = !((string.Compare(ID, item)) == 0);
+                bool match = ((string.Compare(ID, item)) == 0);
                 result |= match; // Mindst en compare returnerer true
             }
 
             return result;
         }
+    }
 
 
         public class Game
@@ -101,5 +102,4 @@ namespace DummyClassSolution
             public string[] Tags { get; private set; }
 
         }
-    }
 }

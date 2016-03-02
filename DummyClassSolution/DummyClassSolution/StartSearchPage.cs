@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DummyClassSolution
 {
-    public partial class Form1 : Form
+    public partial class StartSearchPage : Form
     {
-        public Form1()
+        public StartSearchPage()
         {
             InitializeComponent();
         }
@@ -56,7 +56,17 @@ namespace DummyClassSolution
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            
+            DummyClass Dummy1 = new DummyClass();
+
+            List<Game> FormGameList = Dummy1.GetGameListByName(textBox1.Text);
+
+            if (!(FormGameList == null))
+            {
+                ShowPage FirstShowPage = new ShowPage();
+                FirstShowPage.Show();
+            } else
+            {
+            }
         }
     }
 }

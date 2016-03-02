@@ -1,6 +1,6 @@
 ﻿namespace DummyClassSolution
 {
-    partial class Form1
+    partial class StartSearchPage
     {
         /// <summary>
         /// Required designer variable.
