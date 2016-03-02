@@ -10,7 +10,7 @@ namespace DummyClassSolution
     {
         public DummyClass()
         {
-            Game MB = new Game(120, "Monster Bruterrr", "MMORPG", "Action", "Fantasy");
+            Game MB = new Game(120, "Monster Fucker", "MMORPG", "Action", "Fantasy");
             Game SuperSheep = new Game(110, "Super Sheep", "Action", "Animal");
             Game LostManIsLost = new Game(102, "Lost Man Is Lost", "Horror", "Funny", "Fantasy");
             Game DakkeDakMusic = new Game(96, "Dakke Dak Music Simulator", "Funny", "Dark");
