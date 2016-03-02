@@ -10,7 +10,7 @@ namespace DummyClassSolution
     {
         public DummyClass()
         {
-            Game MB = new Game(120, "Monster Fucker", "MMORPG", "Action", "Fantasy");
+            Game MB = new Game(120, "Monster Brute", "MMORPG", "Action", "Fantasy");
             Game SuperSheep = new Game(110, "Super Sheep", "Action", "Animal");
             Game LostManIsLost = new Game(102, "Lost Man Is Lost", "Horror", "Funny", "Fantasy");
             Game DakkeDakMusic = new Game(96, "Dakke Dak Music Simulator", "Funny", "Dark");
@@ -31,15 +31,52 @@ namespace DummyClassSolution
             GameList.Add(BrotherIsADuckling);
             GameList.Add(ProtonSimulator);
             GameList.Add(NiceCakeMrRobinson);
+
+
+
+
+            NameList.Add("Gustav");
+            NameList.Add("Julius");
+            NameList.Add("Ronja");
+            NameList.Add("Aleksander");
+            NameList.Add("Petter");
+            NameList.Add("Pubaaah");
+            NameList.Add("Aleqsander");
+            NameList.Add("Aleqxander");
+            NameList.Add("Morty");
         }
+        List<string> NameList = new List<string>();
 
         List<Game> GameList = new List<Game>();
+
+        public List<Game> GetGameListByName(string SteamID)
+        {
+            if (IDCompare(SteamID))
+            {
+                return GameList;
+            } else
+            {
+                return null;
+            }
+        }
 
         public List<Game> GetList(string Name)
         {
             return GameList;
         }
 
+        private bool IDCompare(string ID)
+        {
+            bool result = false;
+
+            foreach(string item in NameList)
+            {
+                bool match = !((string.Compare(ID, item)) == 0);
+                result |= match; // Mindst en compare returnerer true
+            }
+
+            return result;
+        }
 
 
         public class Game
