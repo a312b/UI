@@ -51,10 +51,8 @@ namespace DummyClassSolution
 
         public void SearchButton_Click(object sender, EventArgs e)
         {
-        string steamID = textBox1.Text;
-            
+            string steamID = textBox1.Text;
             DummyClass Dummy1 = new DummyClass();
-
             List<Game> FormGameList = Dummy1.GetGameListByName(steamID);
 
             if (!(FormGameList == null))
