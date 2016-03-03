@@ -20,7 +20,7 @@ namespace DummyClassSolution
             Game BrotherIsADuckling = new Game(51, "Brother Is A Duckling", "Animal", "Dark");
             Game ProtonSimulator = new Game(39, "Proton Simulator", "Boring", "MMORPG");
             Game NiceCakeMrRobinson = new Game(20, "Nice Cake Mr Robinson", "Space", "Fantasy", "Action");
-
+            
             GameList.Add(MB);
             GameList.Add(SuperSheep);
             GameList.Add(LostManIsLost);
@@ -53,6 +53,7 @@ namespace DummyClassSolution
         {
             if (IDCompare(SteamID))
             {
+                string steamID = SteamID;
                 return GameList;
             } else
             {

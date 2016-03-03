@@ -54,17 +54,30 @@ namespace DummyClassSolution
             }
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
+        public void SearchButton_Click(object sender, EventArgs e)
         {
+        string steamID = textBox1.Text;
+            //ShowPage FirstShowPage = new ShowPage();
+            //FirstShowPage.Show();
             DummyClass Dummy1 = new DummyClass();
 
-            List<Game> FormGameList = Dummy1.GetGameListByName(textBox1.Text);
+            List<Game> FormGameList = Dummy1.GetGameListByName(steamID);
 
             if (!(FormGameList == null))
             {
                 ShowPage FirstShowPage = new ShowPage();
-                FirstShowPage.Show();
-            } else
+                foreach (Game game in FormGameList)
+                {
+                    for (int id = 0; id < game.Genre.Length; id++)
+                    {
+                        if (game.Genre[id] == checkedListBox1.SelectedItem.ToString())
+                        {
+                            listBox1.Items.Add(game.Name);
+                        }
+                    }
+                }
+            }
+            else
             {
             }
         }

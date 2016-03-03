@@ -30,13 +30,16 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 62);
+            this.textBox1.Location = new System.Drawing.Point(75, 23);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(133, 22);
+            this.textBox1.Size = new System.Drawing.Size(101, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Enter SteamID...";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -46,23 +49,56 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(286, 61);
+            this.SearchButton.Location = new System.Drawing.Point(179, 23);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(75, 23);
+            this.SearchButton.Size = new System.Drawing.Size(56, 19);
             this.SearchButton.TabIndex = 1;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // Form1
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(21, 115);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(288, 173);
+            this.listBox1.TabIndex = 2;
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "MMORPG",
+            "Action",
+            "Fantasy",
+            "Animal",
+            "Horror",
+            "Funny",
+            "Dark",
+            "Gore",
+            "Space",
+            "Science",
+            "Fiction",
+            "Boring"});
+            this.checkedListBox1.Location = new System.Drawing.Point(91, 55);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(158, 49);
+            this.checkedListBox1.TabIndex = 3;
+            // 
+            // StartSearchPage
             // 
             this.AcceptButton = this.SearchButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 404);
+            this.ClientSize = new System.Drawing.Size(334, 328);
+            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.textBox1);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "StartSearchPage";
             this.Text = "Form1";
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             this.MouseLeave += new System.EventHandler(this.Form1_MouseLeave);
@@ -75,6 +111,8 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
 

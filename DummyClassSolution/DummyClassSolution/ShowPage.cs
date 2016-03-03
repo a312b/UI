@@ -16,5 +16,24 @@ namespace DummyClassSolution
         {
             InitializeComponent();
         }
+
+        private void ShowPage_Load(object sender, EventArgs e)
+        {
+            //DummyClass Dummy1 = new DummyClass();
+
+            //List<Game> FormGameList = Dummy1.GetGameListByName();
+
+            //if (!(FormGameList == null))
+            //{
+            //    ShowPage FirstShowPage = new ShowPage();
+            //    foreach (Game game in FormGameList)
+            //    {
+            //        listBox1.Items.Add(game.Name);
+            //    }
+            //}
+            //else
+            //{
+            //}
+        }
     }
 }
