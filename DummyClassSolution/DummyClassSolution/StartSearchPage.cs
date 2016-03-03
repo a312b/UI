@@ -59,21 +59,21 @@ namespace DummyClassSolution
             {
                 //ShowPage FirstShowPage = new ShowPage();
                 //FirstShowPage.Show(); //Form 2(FirstShowPage) bliver ikke brugt lige nu, da listen pt vises i samme form
+                listBox1.Items.Clear();
                 foreach (Game game in FormGameList)
                 {
-                    for (int id = 0; id < game.Genre.Length; id++)
+                    foreach (string tag in checkedListBox1.CheckedItems)
                     {
-                        foreach (string tag in checkedListBox1.CheckedItems)
+                        for (int id = 0; id < game.Genre.Length; id++)
                         {
                             if (game.Genre[id] == tag)
                             {
-                                listBox1.Items.Add(game.Name);
+                                listBox1.Items.Add(game.Name + " | [" + tag + "]"); // tilføjer/printer lige nu bare et spil for hver gang et tag passer
                             }
                         }
                     }
                 }
             }
         }
-
     }
 }

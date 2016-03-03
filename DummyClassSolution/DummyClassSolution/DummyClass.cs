@@ -40,6 +40,10 @@ namespace DummyClassSolution
             NameList.Add("Ronja");
             NameList.Add("Aleksander");
             NameList.Add("Petter");
+            NameList.Add("Peter");
+            NameList.Add("Jeppe");
+            NameList.Add("Jacob");
+            NameList.Add("Niclas");
             NameList.Add("Pubaaah");
             NameList.Add("Aleqsander");
             NameList.Add("Aleqxander");
