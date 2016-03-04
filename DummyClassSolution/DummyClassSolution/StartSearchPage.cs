@@ -62,13 +62,15 @@ namespace DummyClassSolution
                 listBox1.Items.Clear();
                 foreach (Game game in FormGameList)
                 {
+                    int rank = 0;
                     foreach (string tag in checkedListBox1.CheckedItems)
                     {
                         for (int id = 0; id < game.Genre.Length; id++)
                         {
                             if (game.Genre[id] == tag)
                             {
-                                listBox1.Items.Add(game.Name + " | [" + tag + "]"); // tilføjer/printer lige nu bare et spil for hver gang et tag passer
+                                rank++;
+                                listBox1.Items.Add(game.Name + " | [" + tag + "]" + " | rank: " + rank); // tilføjer/printer lige nu bare et spil for hver gang et tag passer
                             }
                         }
                     }
