@@ -17,65 +17,71 @@ namespace DummyClassSolution
             InitializeComponent();
         }
 
-        private void textBox1_MouseClick(object sender, MouseEventArgs e)
+        private void steamIdTextBox_MouseClick(object sender, MouseEventArgs e)
         {
-            clearTextBox();
+            ClearTextBox();
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
+        private void steamIdTextBox_Leave(object sender, EventArgs e)
         {
-            clearTextBox();
+            ClearTextBox();
         }
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            clearTextBox();
+            ClearTextBox();
         }
 
-        private void textBox1_Click(object sender, EventArgs e)
+        private void ClearTextBox()
         {
-            clearTextBox();
-        }
-
-        public void clearTextBox()
-        {
-            if (textBox1.Text == "Enter SteamID...")
+            switch (steamIdTextBox.Text)
             {
-                textBox1.Text = "";
-            }
-            else if (textBox1.Text == "")
-            {
-                textBox1.Text = "Enter SteamID...";
+                case "Enter SteamID...":
+                    steamIdTextBox.Text = "";
+                    break;
+                case "":
+                    steamIdTextBox.Text = "Enter SteamID...";
+                    break;
+                default:
+                    steamIdTextBox.Text = "";
+                    break;
             }
         }
 
-        public void SearchButton_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
-            string steamID = textBox1.Text;
-            DummyClass Dummy1 = new DummyClass();
-            List<Game> FormGameList = Dummy1.GetGameListByName(steamID);
+            string steamId = steamIdTextBox.Text;
+            DummyClass dummy1 = new DummyClass();
+            List<Game> formGameList = dummy1.GetGameListByName(steamId);
 
-            if (!(FormGameList == null))
+            if (formGameList != null)
             {
                 //ShowPage FirstShowPage = new ShowPage();
                 //FirstShowPage.Show(); //Form 2(FirstShowPage) bliver ikke brugt lige nu, da listen pt vises i samme form
-                listBox1.Items.Clear();
-                foreach (Game game in FormGameList)
+                gameListBox.Items.Clear();
+                foreach (Game game in formGameList)
                 {
                     int rank = 0;
-                    foreach (string tag in checkedListBox1.CheckedItems)
+                    foreach (string tag in genreCheckListBox.CheckedItems)
                     {
-                        for (int id = 0; id < game.Genre.Length; id++)
+                        foreach (string genre in game.Genre)
                         {
-                            if (game.Genre[id] == tag)
+                            if (genre == tag)
                             {
                                 rank++;
-                                listBox1.Items.Add(game.Name + " | [" + tag + "]" + " | rank: " + rank); // tilføjer/printer lige nu bare et spil for hver gang et tag passer
+                                if (rank >= minimumRankToShow.Value)
+                                {
+                                    gameListBox.Items.Add(game.Name + " | [" + tag + "]" + " | rank: " + rank); // tilføjer/printer lige nu bare et spil for hver gang et tag og rank passer
+                                }
                             }
                         }
                     }
                 }
             }
+        }
+        private void genreCheckListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            minimumRankToShow.Value = genreCheckListBox.CheckedItems.Count;
         }
     }
 }
