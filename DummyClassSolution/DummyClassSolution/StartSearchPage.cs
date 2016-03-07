@@ -42,9 +42,6 @@ namespace DummyClassSolution
                 case "":
                     steamIdTextBox.Text = "Enter SteamID...";
                     break;
-                default:
-                    steamIdTextBox.Text = "";
-                    break;
             }
         }
 
