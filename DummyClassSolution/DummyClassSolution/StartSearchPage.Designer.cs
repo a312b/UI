@@ -165,7 +165,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "StartSearchPage";
-            this.Opacity = 0.5D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Start Search Page";
             this.Load += new System.EventHandler(this.StartSearchPage_Load);
