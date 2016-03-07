@@ -53,19 +53,10 @@
     <Compile Include="StartSearchPage.Designer.cs">
       <DependentUpon>StartSearchPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShowPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ShowPage.Designer.cs">
-      <DependentUpon>ShowPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="StartSearchPage.resx">
       <DependentUpon>StartSearchPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ShowPage.resx">
-      <DependentUpon>ShowPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -53,9 +53,8 @@ namespace DummyClassSolution
 
             if (formGameList != null)
             {
-                //ShowPage FirstShowPage = new ShowPage();
-                //FirstShowPage.Show(); //Form 2(FirstShowPage) bliver ikke brugt lige nu, da listen pt vises i samme form
-                gameListBox.Items.Clear();
+                this.Size = new Size(637, 556);
+                listBox1.Items.Clear();
                 foreach (Game game in formGameList)
                 {
                     int rank = 0;
@@ -68,7 +67,7 @@ namespace DummyClassSolution
                                 rank++;
                                 if (rank >= minimumRankToShow.Value)
                                 {
-                                    gameListBox.Items.Add(game.Name + " | [" + tag + "]" + " | rank: " + rank); // tilføjer/printer lige nu bare et spil for hver gang et tag og rank passer
+                                    listBox1.Items.Add(game.Name + " | [" + tag + "]" + " | rank: " + rank);
                                 }
                             }
                         }
@@ -79,6 +78,11 @@ namespace DummyClassSolution
         private void genreCheckListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             minimumRankToShow.Value = genreCheckListBox.CheckedItems.Count;
+        }
+
+        private void StartSearchPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
