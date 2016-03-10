@@ -10,16 +10,16 @@ namespace DummyClassSolution
     {
         public DummyClass()
         {
-            Game MB = new Game(120, "Monster Brute", "MMORPG", "Action", "Fantasy");
-            Game SuperSheep = new Game(110, "Super Sheep", "Action", "Animal");
-            Game LostManIsLost = new Game(102, "Lost Man Is Lost", "Horror", "Funny", "Fantasy");
-            Game DakkeDakMusic = new Game(96, "Dakke Dak Music Simulator", "Funny", "Dark");
-            Game RaidThePlayStore = new Game(95, "Raid The Play Store", "Gore", "Horror", "Dark", "Action");
-            Game District42 = new Game(82, "District 42", "Science Fiction", "Space", "Action");
-            Game SailToTheMoon = new Game(56, "Sail To The Moon", "Space", "Animal");
-            Game BrotherIsADuckling = new Game(51, "Brother Is A Duckling", "Animal", "Dark");
-            Game ProtonSimulator = new Game(39, "Proton Simulator", "Boring", "MMORPG");
-            Game NiceCakeMrRobinson = new Game(20, "Nice Cake Mr Robinson", "Space", "Fantasy", "Action");
+            Game MB = new Game(80, "Counter-Strike: Condition Zero", "MMORPG", "Action", "Fantasy", "Multiplayer", "Free To Play");
+            Game SuperSheep = new Game(150, "Counter-Strike: Condition Zero", "Action", "Animal", "Singleplayer", "Open World", "Sandbox");
+            Game LostManIsLost = new Game(240, "Counter-Strike: Source", "Horror", "Funny", "Fantasy", "Co-op", "Sandbox", "Moddability");
+            Game DakkeDakMusic = new Game(280, "Half-Life: Source", "Funny", "Dark", "Singleplayer", "Free To Play");
+            Game RaidThePlayStore = new Game(340, "Half-Life 2: Lost Coast", "Gore", "Horror", "Dark", "Action","Singleplayer","Multiplayer", "Co-op", "Open World");
+            Game District42 = new Game(400, "Portal", "Space", "Action", "Multiplayer", "Moddability");
+            Game SailToTheMoon = new Game(440, "Team Fortress 2", "Space", "Animal", "Multiplayer", "Moddability");
+            Game BrotherIsADuckling = new Game(500, "Left 4 Dead", "Animal", "Dark", "Singleplayer", "Free To Play");
+            Game ProtonSimulator = new Game(570, "Dota 2", "Boring", "MMORPG", "Multiplayer", "Sandbox", "Open World");
+            Game NiceCakeMrRobinson = new Game(300, "Day of Defeat: Source", "Space", "Fantasy", "Action", "Singleplayer", "Co-op", "Moddability");
             
             GameList.Add(MB);
             GameList.Add(SuperSheep);
@@ -35,19 +35,19 @@ namespace DummyClassSolution
 
 
 
-            NameList.Add("Gustav");
-            NameList.Add("Julius");
-            NameList.Add("Ronja");
-            NameList.Add("Aleksander");
-            NameList.Add("Petter");
-            NameList.Add("Peter");
-            NameList.Add("Jeppe");
-            NameList.Add("Jacob");
-            NameList.Add("Niclas");
-            NameList.Add("Pubaaah");
-            NameList.Add("Aleqsander");
-            NameList.Add("Aleqxander");
-            NameList.Add("Morty");
+            NameList.Add("gustav");
+            NameList.Add("julius");
+            NameList.Add("ronja");
+            NameList.Add("aleksander");
+            NameList.Add("petter");
+            NameList.Add("peter");
+            NameList.Add("jeppe");
+            NameList.Add("jacob");
+            NameList.Add("niclas");
+            NameList.Add("pubaaah");
+            NameList.Add("aleqsander");
+            NameList.Add("aleqxander");
+            NameList.Add("morty");
         }
         List<string> NameList = new List<string>();
 
@@ -88,15 +88,15 @@ namespace DummyClassSolution
         public class Game
         {
             private static int ID = 0;
-            public Game(int _point, string _name, params string[] _genre)
+            public Game(int _appId, string _name, params string[] _genre)
             {
                 this.Name = _name;
                 this.Genre = _genre;
                 this.GameID = ID++;
-                this.RCPoint = _point;
+                this.AppId = _appId;
             }
 
-            public int RCPoint { get; private set; }
+            public int AppId { get; private set; }
 
             public string Name { get; private set; }
 
