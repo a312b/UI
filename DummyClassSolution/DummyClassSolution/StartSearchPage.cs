@@ -172,22 +172,44 @@ namespace DummyClassSolution
 
         private void genreCheckListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            minimumRank.Value = genreCheckListBox.CheckedItems.Count + gameModeListBox.CheckedItems.Count + specifierCheckedListBox.CheckedItems.Count;
+            if (checkBox1.Checked)
+            {
+                minimumRank.Value = genreCheckListBox.CheckedItems.Count + gameModeListBox.CheckedItems.Count + specifierCheckedListBox.CheckedItems.Count;
+            }
         }
 
         private void gameModeListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            minimumRank.Value = genreCheckListBox.CheckedItems.Count + gameModeListBox.CheckedItems.Count + specifierCheckedListBox.CheckedItems.Count;
+            if (checkBox1.Checked)
+            {
+                minimumRank.Value = genreCheckListBox.CheckedItems.Count + gameModeListBox.CheckedItems.Count + specifierCheckedListBox.CheckedItems.Count;
+            }
         }
 
         private void specifierListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            minimumRank.Value = genreCheckListBox.CheckedItems.Count + gameModeListBox.CheckedItems.Count + specifierCheckedListBox.CheckedItems.Count;
+            if (checkBox1.Checked)
+            {
+                minimumRank.Value = genreCheckListBox.CheckedItems.Count + gameModeListBox.CheckedItems.Count + specifierCheckedListBox.CheckedItems.Count;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             minimumRank.Visible = !minimumRank.Visible;
+            checkBox1.Visible = !checkBox1.Visible;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                minimumRank.Value = genreCheckListBox.CheckedItems.Count + gameModeListBox.CheckedItems.Count + specifierCheckedListBox.CheckedItems.Count;
+            }
+            else
+            {
+                minimumRank.Value = 0;
+            }
         }
     }
 }

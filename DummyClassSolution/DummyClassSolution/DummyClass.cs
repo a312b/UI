@@ -20,7 +20,11 @@ namespace DummyClassSolution
             Game L4D = new Game(500, "Left 4 Dead", "Animal", "Dark", "Singleplayer", "Free To Play");
             Game DOTA = new Game(570, "Dota 2", "Boring", "MMORPG", "Multiplayer", "Sandbox", "Open World");
             Game DODS = new Game(300, "Day of Defeat: Source", "Funny", "Space", "Fantasy", "Action", "Singleplayer", "Co-op", "Moddability");
-            
+            Game COD4 = new Game(7940, "Call of Duty 4: MW", "", "Action", "Multiplayer", "Moddability", "Co-op");
+            Game CODMW2 = new Game(10180, "Call of Duty: MW 2", "Space", "Action", "Multiplayer", "Moddability");
+            Game FLLNW = new Game(22380, "Fallout: New Vegas", "Space", "Fantasy", "Action", "Singleplayer", "Moddability");
+            Game FLL4 = new Game(377160, "Fallout 4", "Space", "Action", "Singleplayer");
+
             GameList.Add(CSCZ);
             GameList.Add(CSCZBeta);
             GameList.Add(CSS);
@@ -31,9 +35,10 @@ namespace DummyClassSolution
             GameList.Add(L4D);
             GameList.Add(DOTA);
             GameList.Add(DODS);
-
-
-
+            GameList.Add(COD4);
+            GameList.Add(CODMW2);
+            GameList.Add(FLLNW);
+            GameList.Add(FLL4);
 
             NameList.Add("gustav");
             NameList.Add("julius");

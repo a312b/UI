@@ -35,6 +35,7 @@
             this.genreCheckListBox = new System.Windows.Forms.CheckedListBox();
             this.minimumRank = new System.Windows.Forms.NumericUpDown();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.gameModeListBox = new System.Windows.Forms.CheckedListBox();
             this.specifierCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
@@ -107,10 +108,10 @@
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.label27 = new System.Windows.Forms.Label();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.minimumRank)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -212,6 +213,7 @@
             this.minimumRank.TabIndex = 4;
             this.minimumRank.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.minimumRank, "LOWER RANK FOR MORE RESULTS.");
+            this.minimumRank.Visible = false;
             // 
             // toolTip1
             // 
@@ -222,6 +224,19 @@
             this.toolTip1.ReshowDelay = 50;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Rank is tags that match";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(593, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 12);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Rank:";
+            this.toolTip1.SetToolTip(this.label1, "LOWER RANK FOR MORE RESULTS.\r\nRank is the number of tags that have to match, lowe" +
+        "ring it will increase results.\r\n(Meant for debugging)");
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // gameModeListBox
             // 
@@ -1084,19 +1099,6 @@
             this.pictureBox25.TabIndex = 1;
             this.pictureBox25.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(593, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 12);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Rank:";
-            this.toolTip1.SetToolTip(this.label1, "LOWER RANK FOR MORE RESULTS.\r\nRank is the number of tags that have to match, lowe" +
-        "ring it will increase results.\r\n(Meant for debugging)");
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -1124,13 +1126,27 @@
             this.label29.TabIndex = 19;
             this.label29.Text = "Specifier tags";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(591, 104);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(48, 16);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "on/off";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // StartSearchPage
             // 
             this.AcceptButton = this.SearchButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(636, 191);
+            this.ClientSize = new System.Drawing.Size(636, 194);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label12);
@@ -1148,7 +1164,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "StartSearchPage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Start Search Page";
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.minimumRank)).EndInit();
@@ -1298,6 +1313,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
