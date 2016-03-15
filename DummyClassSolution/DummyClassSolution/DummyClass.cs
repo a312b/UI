@@ -10,27 +10,27 @@ namespace DummyClassSolution
     {
         public DummyClass()
         {
-            Game MB = new Game(80, "Counter-Strike: Condition Zero", "MMORPG", "Action", "Fantasy", "Multiplayer", "Free To Play");
-            Game SuperSheep = new Game(150, "Counter-Strike: Condition Zero", "Action", "Animal", "Singleplayer", "Open World", "Sandbox");
-            Game LostManIsLost = new Game(240, "Counter-Strike: Source", "Horror", "Funny", "Fantasy", "Co-op", "Sandbox", "Moddability");
-            Game DakkeDakMusic = new Game(280, "Half-Life: Source", "Funny", "Dark", "Singleplayer", "Free To Play");
-            Game RaidThePlayStore = new Game(340, "Half-Life 2: Lost Coast", "Gore", "Horror", "Dark", "Action","Singleplayer","Multiplayer", "Co-op", "Open World");
-            Game District42 = new Game(400, "Portal", "Space", "Action", "Multiplayer", "Moddability");
-            Game SailToTheMoon = new Game(440, "Team Fortress 2", "Space", "Animal", "Multiplayer", "Moddability");
-            Game BrotherIsADuckling = new Game(500, "Left 4 Dead", "Animal", "Dark", "Singleplayer", "Free To Play");
-            Game ProtonSimulator = new Game(570, "Dota 2", "Boring", "MMORPG", "Multiplayer", "Sandbox", "Open World");
-            Game NiceCakeMrRobinson = new Game(300, "Day of Defeat: Source", "Space", "Fantasy", "Action", "Singleplayer", "Co-op", "Moddability");
+            Game CSCZ = new Game(80, "Counter-Strike: Condition Zero", "MMORPG", "Action", "Fantasy", "Multiplayer", "Free To Play");
+            Game CSCZBeta = new Game(150, "Counter-Strike: CZ Beta", "Action", "Animal", "Singleplayer", "Open World", "Sandbox");
+            Game CSS = new Game(240, "Counter-Strike: Source", "Horror", "Funny", "Fantasy", "Co-op", "Sandbox", "Moddability");
+            Game HLS = new Game(280, "Half-Life: Source", "Funny", "Dark", "Singleplayer", "Free To Play");
+            Game HL2LC = new Game(340, "Half-Life 2: Lost Coast", "Gore", "Horror", "Dark", "Action","Singleplayer","Multiplayer", "Co-op", "Open World");
+            Game POR = new Game(400, "Portal", "Space", "Action", "Multiplayer", "Moddability");
+            Game TF2 = new Game(440, "Team Fortress 2", "Space", "Animal", "Multiplayer", "Moddability");
+            Game L4D = new Game(500, "Left 4 Dead", "Animal", "Dark", "Singleplayer", "Free To Play");
+            Game DOTA = new Game(570, "Dota 2", "Boring", "MMORPG", "Multiplayer", "Sandbox", "Open World");
+            Game DODS = new Game(300, "Day of Defeat: Source", "Funny", "Space", "Fantasy", "Action", "Singleplayer", "Co-op", "Moddability");
             
-            GameList.Add(MB);
-            GameList.Add(SuperSheep);
-            GameList.Add(LostManIsLost);
-            GameList.Add(DakkeDakMusic);
-            GameList.Add(RaidThePlayStore);
-            GameList.Add(District42);
-            GameList.Add(SailToTheMoon);
-            GameList.Add(BrotherIsADuckling);
-            GameList.Add(ProtonSimulator);
-            GameList.Add(NiceCakeMrRobinson);
+            GameList.Add(CSCZ);
+            GameList.Add(CSCZBeta);
+            GameList.Add(CSS);
+            GameList.Add(HLS);
+            GameList.Add(HL2LC);
+            GameList.Add(POR);
+            GameList.Add(TF2);
+            GameList.Add(L4D);
+            GameList.Add(DOTA);
+            GameList.Add(DODS);
 
 
 

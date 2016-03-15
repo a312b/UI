@@ -33,11 +33,10 @@
             this.steamIdTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.genreCheckListBox = new System.Windows.Forms.CheckedListBox();
-            this.minimumRankToShow = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.minimumRank = new System.Windows.Forms.NumericUpDown();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.gameModeListBox = new System.Windows.Forms.CheckedListBox();
+            this.specifierCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -64,14 +63,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
@@ -108,7 +107,11 @@
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.label27 = new System.Windows.Forms.Label();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.minimumRankToShow)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.minimumRank)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -122,10 +125,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -155,10 +158,12 @@
             // 
             // steamIdTextBox
             // 
+            this.steamIdTextBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.steamIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.steamIdTextBox.Location = new System.Drawing.Point(215, 18);
             this.steamIdTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.steamIdTextBox.Name = "steamIdTextBox";
-            this.steamIdTextBox.Size = new System.Drawing.Size(101, 20);
+            this.steamIdTextBox.Size = new System.Drawing.Size(117, 22);
             this.steamIdTextBox.TabIndex = 0;
             this.steamIdTextBox.Text = "Enter SteamID...";
             this.steamIdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -167,17 +172,20 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(320, 18);
+            this.SearchButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchButton.Location = new System.Drawing.Point(336, 15);
             this.SearchButton.Margin = new System.Windows.Forms.Padding(2);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(63, 20);
+            this.SearchButton.Size = new System.Drawing.Size(81, 29);
             this.SearchButton.TabIndex = 1;
             this.SearchButton.Text = "Search";
-            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // genreCheckListBox
             // 
+            this.genreCheckListBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.genreCheckListBox.CheckOnClick = true;
             this.genreCheckListBox.FormattingEnabled = true;
             this.genreCheckListBox.Items.AddRange(new object[] {
@@ -194,24 +202,16 @@
             this.genreCheckListBox.TabIndex = 3;
             this.genreCheckListBox.SelectedIndexChanged += new System.EventHandler(this.genreCheckListBox_SelectedIndexChanged);
             // 
-            // minimumRankToShow
+            // minimumRank
             // 
-            this.minimumRankToShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimumRankToShow.Location = new System.Drawing.Point(405, 22);
-            this.minimumRankToShow.Name = "minimumRankToShow";
-            this.minimumRankToShow.Size = new System.Drawing.Size(30, 24);
-            this.minimumRankToShow.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Help;
-            this.label1.Location = new System.Drawing.Point(402, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Min. rank";
-            this.toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
+            this.minimumRank.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.minimumRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimumRank.Location = new System.Drawing.Point(593, 80);
+            this.minimumRank.Name = "minimumRank";
+            this.minimumRank.Size = new System.Drawing.Size(30, 20);
+            this.minimumRank.TabIndex = 4;
+            this.minimumRank.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.minimumRank, "LOWER RANK FOR MORE RESULTS.");
             // 
             // toolTip1
             // 
@@ -223,32 +223,39 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Rank is tags that match";
             // 
-            // checkedListBox1
+            // gameModeListBox
             // 
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.gameModeListBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gameModeListBox.CheckOnClick = true;
+            this.gameModeListBox.FormattingEnabled = true;
+            this.gameModeListBox.Items.AddRange(new object[] {
             "Multiplayer",
             "Co-op",
             "Singleplayer"});
-            this.checkedListBox1.Location = new System.Drawing.Point(217, 64);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(182, 124);
-            this.checkedListBox1.TabIndex = 6;
+            this.gameModeListBox.Location = new System.Drawing.Point(217, 64);
+            this.gameModeListBox.Name = "gameModeListBox";
+            this.gameModeListBox.Size = new System.Drawing.Size(182, 124);
+            this.gameModeListBox.TabIndex = 6;
+            this.gameModeListBox.SelectedIndexChanged += new System.EventHandler(this.gameModeListBox_SelectedIndexChanged);
             // 
-            // checkedListBox2
+            // specifierCheckedListBox
             // 
-            this.checkedListBox2.CheckOnClick = true;
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
+            this.specifierCheckedListBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.specifierCheckedListBox.CheckOnClick = true;
+            this.specifierCheckedListBox.FormattingEnabled = true;
+            this.specifierCheckedListBox.Items.AddRange(new object[] {
             "Moddability",
             "Free To Play",
             "Sandbox",
-            "Open World"});
-            this.checkedListBox2.Location = new System.Drawing.Point(405, 64);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(182, 124);
-            this.checkedListBox2.TabIndex = 7;
+            "Open World",
+            "Funny",
+            "Dark",
+            "Gore"});
+            this.specifierCheckedListBox.Location = new System.Drawing.Point(405, 64);
+            this.specifierCheckedListBox.Name = "specifierCheckedListBox";
+            this.specifierCheckedListBox.Size = new System.Drawing.Size(182, 124);
+            this.specifierCheckedListBox.TabIndex = 7;
+            this.specifierCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.specifierListBox_SelectedIndexChanged);
             // 
             // imageList1
             // 
@@ -512,9 +519,9 @@
             this.flowLayoutPanel2.Controls.Add(this.tableLayoutPanel13);
             this.flowLayoutPanel2.Controls.Add(this.tableLayoutPanel14);
             this.flowLayoutPanel2.Controls.Add(this.tableLayoutPanel15);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(72, 203);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(12, 194);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(487, 231);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(624, 297);
             this.flowLayoutPanel2.TabIndex = 12;
             this.flowLayoutPanel2.Visible = false;
             // 
@@ -528,10 +535,35 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.43662F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.56338F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Enabled = false;
+            this.label13.Location = new System.Drawing.Point(3, 127);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "label13";
+            this.label13.Visible = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox11.Enabled = false;
+            this.pictureBox11.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(190, 121);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 1;
+            this.pictureBox11.TabStop = false;
+            this.pictureBox11.Visible = false;
             // 
             // tableLayoutPanel3
             // 
@@ -540,13 +572,35 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.pictureBox12, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label14, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(159, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(205, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.73239F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.26761F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox12.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(190, 119);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox12.TabIndex = 2;
+            this.pictureBox12.TabStop = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Enabled = false;
+            this.label14.Location = new System.Drawing.Point(3, 125);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "label14";
+            this.label14.Visible = false;
             // 
             // tableLayoutPanel4
             // 
@@ -555,84 +609,35 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Controls.Add(this.pictureBox13, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label15, 0, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(315, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(407, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.02817F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.97183F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel4.TabIndex = 2;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Enabled = false;
-            this.label13.Location = new System.Drawing.Point(3, 96);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "label13";
-            this.label13.Visible = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Enabled = false;
-            this.label14.Location = new System.Drawing.Point(3, 96);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "label14";
-            this.label14.Visible = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Enabled = false;
-            this.label15.Location = new System.Drawing.Point(3, 96);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "label15";
-            this.label15.Visible = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox11.Enabled = false;
-            this.pictureBox11.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(144, 90);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 1;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Visible = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox12.Enabled = false;
-            this.pictureBox12.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(144, 90);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 2;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Visible = false;
             // 
             // pictureBox13
             // 
             this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox13.Enabled = false;
             this.pictureBox13.Location = new System.Drawing.Point(3, 3);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox13.Size = new System.Drawing.Size(190, 118);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 2;
             this.pictureBox13.TabStop = false;
-            this.pictureBox13.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Enabled = false;
+            this.label15.Location = new System.Drawing.Point(3, 124);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "label15";
+            this.label15.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -641,20 +646,20 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.label16, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox14, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 119);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 151);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.43662F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.56338F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Enabled = false;
-            this.label16.Location = new System.Drawing.Point(3, 96);
+            this.label16.Location = new System.Drawing.Point(3, 127);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(41, 13);
             this.label16.TabIndex = 0;
@@ -665,14 +670,12 @@
             // 
             this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox14.Enabled = false;
             this.pictureBox14.Location = new System.Drawing.Point(3, 3);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox14.Size = new System.Drawing.Size(190, 121);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 1;
             this.pictureBox14.TabStop = false;
-            this.pictureBox14.Visible = false;
             // 
             // tableLayoutPanel5
             // 
@@ -681,19 +684,19 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Controls.Add(this.label17, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.pictureBox15, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(159, 119);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(205, 151);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.43662F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.56338F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Enabled = false;
-            this.label17.Location = new System.Drawing.Point(3, 96);
+            this.label17.Location = new System.Drawing.Point(3, 127);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 13);
             this.label17.TabIndex = 0;
@@ -704,14 +707,12 @@
             // 
             this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox15.Enabled = false;
             this.pictureBox15.Location = new System.Drawing.Point(3, 3);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox15.Size = new System.Drawing.Size(190, 121);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 1;
             this.pictureBox15.TabStop = false;
-            this.pictureBox15.Visible = false;
             // 
             // tableLayoutPanel6
             // 
@@ -720,19 +721,19 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.Controls.Add(this.label18, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.pictureBox16, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(315, 119);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(407, 151);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.43662F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.56338F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel6.TabIndex = 5;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Enabled = false;
-            this.label18.Location = new System.Drawing.Point(3, 96);
+            this.label18.Location = new System.Drawing.Point(3, 127);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(41, 13);
             this.label18.TabIndex = 0;
@@ -743,14 +744,12 @@
             // 
             this.pictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox16.Enabled = false;
             this.pictureBox16.Location = new System.Drawing.Point(3, 3);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox16.Size = new System.Drawing.Size(190, 121);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox16.TabIndex = 1;
             this.pictureBox16.TabStop = false;
-            this.pictureBox16.Visible = false;
             // 
             // tableLayoutPanel7
             // 
@@ -759,19 +758,19 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.Controls.Add(this.label19, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.pictureBox17, 0, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 235);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 299);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.43662F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.56338F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel7.TabIndex = 6;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Enabled = false;
-            this.label19.Location = new System.Drawing.Point(3, 96);
+            this.label19.Location = new System.Drawing.Point(3, 127);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 0;
@@ -782,14 +781,12 @@
             // 
             this.pictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox17.Enabled = false;
             this.pictureBox17.Location = new System.Drawing.Point(3, 3);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox17.Size = new System.Drawing.Size(190, 121);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 1;
             this.pictureBox17.TabStop = false;
-            this.pictureBox17.Visible = false;
             // 
             // tableLayoutPanel8
             // 
@@ -798,19 +795,19 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.Controls.Add(this.label20, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.pictureBox18, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(159, 235);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(205, 299);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.14085F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.859155F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel8.TabIndex = 7;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Enabled = false;
-            this.label20.Location = new System.Drawing.Point(3, 96);
+            this.label20.Location = new System.Drawing.Point(3, 128);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(41, 13);
             this.label20.TabIndex = 0;
@@ -821,14 +818,12 @@
             // 
             this.pictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox18.Enabled = false;
             this.pictureBox18.Location = new System.Drawing.Point(3, 3);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox18.Size = new System.Drawing.Size(190, 122);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox18.TabIndex = 1;
             this.pictureBox18.TabStop = false;
-            this.pictureBox18.Visible = false;
             // 
             // tableLayoutPanel9
             // 
@@ -837,19 +832,19 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel9.Controls.Add(this.label21, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.pictureBox19, 0, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(315, 235);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(407, 299);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.14085F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.859155F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel9.TabIndex = 8;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Enabled = false;
-            this.label21.Location = new System.Drawing.Point(3, 96);
+            this.label21.Location = new System.Drawing.Point(3, 128);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(41, 13);
             this.label21.TabIndex = 0;
@@ -860,14 +855,12 @@
             // 
             this.pictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox19.Enabled = false;
             this.pictureBox19.Location = new System.Drawing.Point(3, 3);
             this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox19.Size = new System.Drawing.Size(190, 122);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox19.TabIndex = 1;
             this.pictureBox19.TabStop = false;
-            this.pictureBox19.Visible = false;
             // 
             // tableLayoutPanel10
             // 
@@ -876,19 +869,19 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel10.Controls.Add(this.label22, 0, 1);
             this.tableLayoutPanel10.Controls.Add(this.pictureBox20, 0, 0);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 351);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 447);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel10.TabIndex = 9;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Enabled = false;
-            this.label22.Location = new System.Drawing.Point(3, 96);
+            this.label22.Location = new System.Drawing.Point(3, 124);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(41, 13);
             this.label22.TabIndex = 0;
@@ -899,14 +892,12 @@
             // 
             this.pictureBox20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox20.Enabled = false;
             this.pictureBox20.Location = new System.Drawing.Point(3, 3);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox20.Size = new System.Drawing.Size(190, 118);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox20.TabIndex = 1;
             this.pictureBox20.TabStop = false;
-            this.pictureBox20.Visible = false;
             // 
             // tableLayoutPanel11
             // 
@@ -915,19 +906,19 @@
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel11.Controls.Add(this.label23, 0, 1);
             this.tableLayoutPanel11.Controls.Add(this.pictureBox21, 0, 0);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(159, 351);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(205, 447);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 2;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel11.TabIndex = 10;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Enabled = false;
-            this.label23.Location = new System.Drawing.Point(3, 96);
+            this.label23.Location = new System.Drawing.Point(3, 124);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(41, 13);
             this.label23.TabIndex = 0;
@@ -938,14 +929,12 @@
             // 
             this.pictureBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox21.Enabled = false;
             this.pictureBox21.Location = new System.Drawing.Point(3, 3);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox21.Size = new System.Drawing.Size(190, 118);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox21.TabIndex = 1;
             this.pictureBox21.TabStop = false;
-            this.pictureBox21.Visible = false;
             // 
             // tableLayoutPanel12
             // 
@@ -954,19 +943,19 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel12.Controls.Add(this.label24, 0, 1);
             this.tableLayoutPanel12.Controls.Add(this.pictureBox22, 0, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(315, 351);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(407, 447);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 2;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel12.TabIndex = 11;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Enabled = false;
-            this.label24.Location = new System.Drawing.Point(3, 96);
+            this.label24.Location = new System.Drawing.Point(3, 124);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(41, 13);
             this.label24.TabIndex = 0;
@@ -977,14 +966,12 @@
             // 
             this.pictureBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox22.Enabled = false;
             this.pictureBox22.Location = new System.Drawing.Point(3, 3);
             this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox22.Size = new System.Drawing.Size(190, 118);
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox22.TabIndex = 1;
             this.pictureBox22.TabStop = false;
-            this.pictureBox22.Visible = false;
             // 
             // tableLayoutPanel13
             // 
@@ -993,19 +980,19 @@
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel13.Controls.Add(this.label25, 0, 1);
             this.tableLayoutPanel13.Controls.Add(this.pictureBox23, 0, 0);
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 467);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 595);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel13.TabIndex = 12;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Enabled = false;
-            this.label25.Location = new System.Drawing.Point(3, 96);
+            this.label25.Location = new System.Drawing.Point(3, 124);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(41, 13);
             this.label25.TabIndex = 0;
@@ -1016,14 +1003,12 @@
             // 
             this.pictureBox23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox23.Enabled = false;
             this.pictureBox23.Location = new System.Drawing.Point(3, 3);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox23.Size = new System.Drawing.Size(190, 118);
             this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox23.TabIndex = 1;
             this.pictureBox23.TabStop = false;
-            this.pictureBox23.Visible = false;
             // 
             // tableLayoutPanel14
             // 
@@ -1032,19 +1017,19 @@
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel14.Controls.Add(this.label26, 0, 1);
             this.tableLayoutPanel14.Controls.Add(this.pictureBox24, 0, 0);
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(159, 467);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(205, 595);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 2;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel14.TabIndex = 13;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Enabled = false;
-            this.label26.Location = new System.Drawing.Point(3, 96);
+            this.label26.Location = new System.Drawing.Point(3, 124);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(41, 13);
             this.label26.TabIndex = 0;
@@ -1055,14 +1040,12 @@
             // 
             this.pictureBox24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox24.Enabled = false;
             this.pictureBox24.Location = new System.Drawing.Point(3, 3);
             this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox24.Size = new System.Drawing.Size(190, 118);
             this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox24.TabIndex = 1;
             this.pictureBox24.TabStop = false;
-            this.pictureBox24.Visible = false;
             // 
             // tableLayoutPanel15
             // 
@@ -1071,19 +1054,19 @@
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel15.Controls.Add(this.label27, 0, 1);
             this.tableLayoutPanel15.Controls.Add(this.pictureBox25, 0, 0);
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(315, 467);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(407, 595);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(150, 110);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(196, 142);
             this.tableLayoutPanel15.TabIndex = 14;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.Enabled = false;
-            this.label27.Location = new System.Drawing.Point(3, 96);
+            this.label27.Location = new System.Drawing.Point(3, 124);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(41, 13);
             this.label27.TabIndex = 0;
@@ -1094,39 +1077,81 @@
             // 
             this.pictureBox25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox25.Enabled = false;
             this.pictureBox25.Location = new System.Drawing.Point(3, 3);
             this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox25.Size = new System.Drawing.Size(190, 118);
             this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox25.TabIndex = 1;
             this.pictureBox25.TabStop = false;
-            this.pictureBox25.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(593, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 12);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Rank:";
+            this.toolTip1.SetToolTip(this.label1, "LOWER RANK FOR MORE RESULTS.\r\nRank is the number of tags that have to match, lowe" +
+        "ring it will increase results.\r\n(Meant for debugging)");
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(26, 48);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(36, 13);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Genre";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(214, 48);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(65, 13);
+            this.label28.TabIndex = 18;
+            this.label28.Text = "Game Mode";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(402, 48);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(71, 13);
+            this.label29.TabIndex = 19;
+            this.label29.Text = "Specifier tags";
             // 
             // StartSearchPage
             // 
             this.AcceptButton = this.SearchButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 486);
+            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.ClientSize = new System.Drawing.Size(636, 191);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.minimumRank);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.checkedListBox2);
-            this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.minimumRankToShow);
+            this.Controls.Add(this.specifierCheckedListBox);
+            this.Controls.Add(this.gameModeListBox);
             this.Controls.Add(this.genreCheckListBox);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.steamIdTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "StartSearchPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Start Search Page";
-            this.Load += new System.EventHandler(this.StartSearchPage_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
-            ((System.ComponentModel.ISupportInitialize)(this.minimumRankToShow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minimumRank)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1142,12 +1167,12 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -1195,11 +1220,10 @@
         private System.Windows.Forms.TextBox steamIdTextBox;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.CheckedListBox genreCheckListBox;
-        private System.Windows.Forms.NumericUpDown minimumRankToShow;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown minimumRank;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
+        private System.Windows.Forms.CheckedListBox gameModeListBox;
+        private System.Windows.Forms.CheckedListBox specifierCheckedListBox;
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.ImageList imageList1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -1270,6 +1294,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.PictureBox pictureBox25;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
     }
 }
 
