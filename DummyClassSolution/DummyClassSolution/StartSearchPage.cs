@@ -79,9 +79,9 @@ namespace DummyClassSolution
             bool match = false;
             foreach (string tag in game.Genre)
             {
-                foreach (string speficier in specifierCheckedListBox.CheckedItems)
+                foreach (string specifier in specifierCheckedListBox.CheckedItems)
                 {
-                    if (tag == speficier)
+                    if (tag == specifier)
                     {
                         _combinedRank++;
                         match = true;
@@ -210,6 +210,12 @@ namespace DummyClassSolution
             {
                 minimumRank.Value = 0;
             }
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            GameShowForm gameForm = new GameShowForm();
+            gameForm.Show();
         }
     }
 }

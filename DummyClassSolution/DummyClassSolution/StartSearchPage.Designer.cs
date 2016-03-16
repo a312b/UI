@@ -235,7 +235,8 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Rank:";
             this.toolTip1.SetToolTip(this.label1, "LOWER RANK FOR MORE RESULTS.\r\nRank is the number of tags that have to match, lowe" +
-        "ring it will increase results.\r\n(Meant for debugging)");
+        "ring it will increase results.\r\nCLICK this label to expand or hide the rank sele" +
+        "ction.");
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // gameModeListBox
@@ -579,6 +580,7 @@
             this.pictureBox11.TabIndex = 1;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Visible = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -1145,7 +1147,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(636, 194);
+            this.ClientSize = new System.Drawing.Size(636, 191);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
