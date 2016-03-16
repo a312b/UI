@@ -12,9 +12,15 @@ namespace DummyClassSolution
 {
     public partial class GameShowForm : Form
     {
-        public GameShowForm()
+        public GameShowForm(PictureBox pb)
         {
             InitializeComponent();
+            pb.Image = pb.ErrorImage;
+        }
+
+        private void GameShowForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

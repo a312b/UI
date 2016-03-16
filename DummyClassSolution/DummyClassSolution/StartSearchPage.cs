@@ -214,8 +214,8 @@ namespace DummyClassSolution
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
-            GameShowForm gameForm = new GameShowForm();
-            gameForm.Show();
+            GameShowForm gameForm = new GameShowForm(pictureBox11);
+            gameForm.Show(pictureBox11);
         }
     }
 }

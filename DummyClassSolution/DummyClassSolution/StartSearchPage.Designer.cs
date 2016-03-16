@@ -1147,7 +1147,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(636, 191);
+            this.ClientSize = new System.Drawing.Size(636, 516);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
@@ -1268,22 +1268,16 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.PictureBox pictureBox17;
@@ -1316,6 +1310,12 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.PictureBox pictureBox11;
+        public System.Windows.Forms.PictureBox pictureBox12;
+        public System.Windows.Forms.PictureBox pictureBox13;
+        public System.Windows.Forms.PictureBox pictureBox14;
+        public System.Windows.Forms.PictureBox pictureBox15;
+        public System.Windows.Forms.PictureBox pictureBox16;
     }
 }
 
