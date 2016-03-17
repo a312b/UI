@@ -224,8 +224,18 @@ namespace DummyClassSolution
         private void GamePictureBox_Click(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
-            GameShowForm gameForm = new GameShowForm(pb);
-            gameForm.Show();
+            Size full = new Size(597, 198);
+            Size regular = new Size(196, 142);
+            pb.Parent.Size = pb.Parent.Size != full ? full : regular;
+
+        }
+
+        private void tableLayoutPanelTransformer_Click(object sender, EventArgs e)
+        {
+            TableLayoutPanel tlp = sender as TableLayoutPanel;
+            Size full = new Size(597, 198);
+            Size regular = new Size(196, 142);
+            tlp.Size = tlp.Size != full ? full : regular;
         }
     }
 }
