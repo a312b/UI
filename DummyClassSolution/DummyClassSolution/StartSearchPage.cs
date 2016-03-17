@@ -227,6 +227,7 @@ namespace DummyClassSolution
             Size full = new Size(597, 198);
             Size regular = new Size(196, 142);
             pb.Parent.Size = pb.Parent.Size != full ? full : regular;
+            pb.Dock = DockStyle.Left;
 
         }
 
