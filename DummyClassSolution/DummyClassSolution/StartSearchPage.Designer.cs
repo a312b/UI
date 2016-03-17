@@ -580,7 +580,7 @@
             this.pictureBox11.TabIndex = 1;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Visible = false;
-            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
+            this.pictureBox11.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -607,6 +607,7 @@
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 2;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // label14
             // 
@@ -644,6 +645,7 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 2;
             this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // label15
             // 
@@ -693,6 +695,7 @@
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 1;
             this.pictureBox14.TabStop = false;
+            this.pictureBox14.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -730,6 +733,7 @@
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 1;
             this.pictureBox15.TabStop = false;
+            this.pictureBox15.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -767,6 +771,7 @@
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox16.TabIndex = 1;
             this.pictureBox16.TabStop = false;
+            this.pictureBox16.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // tableLayoutPanel7
             // 
@@ -804,6 +809,7 @@
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 1;
             this.pictureBox17.TabStop = false;
+            this.pictureBox17.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // tableLayoutPanel8
             // 
@@ -841,6 +847,7 @@
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox18.TabIndex = 1;
             this.pictureBox18.TabStop = false;
+            this.pictureBox18.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // tableLayoutPanel9
             // 
@@ -878,6 +885,7 @@
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox19.TabIndex = 1;
             this.pictureBox19.TabStop = false;
+            this.pictureBox19.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // tableLayoutPanel10
             // 
@@ -915,6 +923,7 @@
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox20.TabIndex = 1;
             this.pictureBox20.TabStop = false;
+            this.pictureBox20.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // tableLayoutPanel11
             // 
@@ -952,6 +961,7 @@
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox21.TabIndex = 1;
             this.pictureBox21.TabStop = false;
+            this.pictureBox21.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // tableLayoutPanel12
             // 
@@ -989,6 +999,7 @@
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox22.TabIndex = 1;
             this.pictureBox22.TabStop = false;
+            this.pictureBox22.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // tableLayoutPanel13
             // 
@@ -1026,6 +1037,7 @@
             this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox23.TabIndex = 1;
             this.pictureBox23.TabStop = false;
+            this.pictureBox23.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // tableLayoutPanel14
             // 
@@ -1063,6 +1075,7 @@
             this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox24.TabIndex = 1;
             this.pictureBox24.TabStop = false;
+            this.pictureBox24.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // tableLayoutPanel15
             // 
@@ -1100,6 +1113,7 @@
             this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox25.TabIndex = 1;
             this.pictureBox25.TabStop = false;
+            this.pictureBox25.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // label12
             // 
@@ -1147,7 +1161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(636, 516);
+            this.ClientSize = new System.Drawing.Size(636, 192);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
