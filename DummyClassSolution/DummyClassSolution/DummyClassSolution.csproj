@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DummyClass.cs" />
+    <Compile Include="GameShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameShowForm.Designer.cs">
+      <DependentUpon>GameShowForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartSearchPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GameShowForm.resx">
+      <DependentUpon>GameShowForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartSearchPage.resx">
       <DependentUpon>StartSearchPage.cs</DependentUpon>
     </EmbeddedResource>

@@ -49,13 +49,18 @@ namespace DummyClassSolution
         int _combinedRank = 0;
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            GenerateFilteredGameList();
+        }
+
+        private void GenerateFilteredGameList()
+        {
             int roundCount = 0;
             string steamId = steamIdTextBox.Text.ToLower();
             DummyClass dummy1 = new DummyClass();
             List<Game> formGameList = dummy1.GetGameListByName(steamId);
 
             Label[] labels = { label2, label3, label4, label5, label6, label7, label8, label9, label10, label11 };
-            Label[] newlabels = { label13, label14, label15, label16, label17, label18, label19, label20, label21, label22, label23, label24, label25, label25, label26, label27};
+            Label[] newlabels = { label13, label14, label15, label16, label17, label18, label19, label20, label21, label22, label23, label24, label25, label25, label26, label27 };
 
             if (formGameList != null)
             {
@@ -79,9 +84,9 @@ namespace DummyClassSolution
             bool match = false;
             foreach (string tag in game.Genre)
             {
-                foreach (string speficier in specifierCheckedListBox.CheckedItems)
+                foreach (string specifier in specifierCheckedListBox.CheckedItems)
                 {
-                    if (tag == speficier)
+                    if (tag == specifier)
                     {
                         _combinedRank++;
                         match = true;
@@ -210,6 +215,17 @@ namespace DummyClassSolution
             {
                 minimumRank.Value = 0;
             }
+        }
+
+
+        //!!
+            //to do: Maybe change the functionality of click event in the control instead
+        //!!
+        private void GamePictureBox_Click(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            GameShowForm gameForm = new GameShowForm(pb);
+            gameForm.Show();
         }
     }
 }
