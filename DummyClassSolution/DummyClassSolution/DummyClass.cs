@@ -48,6 +48,8 @@ namespace DummyClassSolution
             NameList.Add("aleqsander");
             NameList.Add("aleqxander");
             NameList.Add("morty");
+            NameList.Add("acceptableuser");
+            NameList.Add("user");
         }
         List<string> NameList = new List<string>();
 
