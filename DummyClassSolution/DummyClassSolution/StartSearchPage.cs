@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// ReSharper disable SuggestVarOrType_SimpleTypes
 
 namespace DummyClassSolution
 {
@@ -46,10 +47,11 @@ namespace DummyClassSolution
             }
         }
 
-        int _combinedRank = 0;
+        private int _combinedRank = 0;
         private void SearchButton_Click(object sender, EventArgs e)
         {
             GenerateFilteredGameList();
+            //textBox1.Hide();
         }
 
         private void GenerateFilteredGameList()
@@ -59,13 +61,12 @@ namespace DummyClassSolution
             DummyClass dummy1 = new DummyClass();
             List<Game> formGameList = dummy1.GetGameListByName(steamId);
 
-            Label[] labels = { label2, label3, label4, label5, label6, label7, label8, label9, label10, label11 };
-            Label[] newlabels = { label13, label14, label15, label16, label17, label18, label19, label20, label21, label22, label23, label24, label25, label25, label26, label27 };
+            Label[] gameLabels = { label13, label14, label15, label16, label17, label18, label19, label20, label21, label22, label23, label24, label25, label25, label26, label27 };
 
             if (formGameList != null)
             {
                 this.Size = new Size(652, 529);
-                ClearGameListBox(newlabels);
+                ClearGameListBox(gameLabels);
                 foreach (Game game in formGameList)
                 {
                     _combinedRank = 0;
@@ -132,17 +133,15 @@ namespace DummyClassSolution
 
         private void LoadGameInfo(Game game, int roundCount)
         {
-            Label[] labels = {label2, label3, label4, label5, label6, label7, label8, label9, label10, label11};
-            Label[] newlabels = { label13, label14, label15, label16, label17, label18, label19, label20, label21, label22, label23, label24, label25, label25, label26, label27};
+            Label[] gameLabels = { label13, label14, label15, label16, label17, label18, label19, label20, label21, label22, label23, label24, label25, label25, label26, label27};
 
-            newlabels[roundCount].Text = game.Name;
-            newlabels[roundCount].Visible = true;
+            gameLabels[roundCount].Text = game.Name;
+            gameLabels[roundCount].Visible = true;
             flowLayoutPanel2.Visible = true;
         }
 
         private void ClearGameListBox(Label[] list)
         {
-            PictureBox[] boxes = {pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8 };
             PictureBox[] newboxes = { pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox24, pictureBox25 };
             
             foreach (PictureBox t in newboxes)
@@ -161,13 +160,12 @@ namespace DummyClassSolution
 
         private void LoadHeaderImages(int appId, int pb)
         {
-            PictureBox[] boxess = {pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8};
-            PictureBox[] newboxess = { pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox24, pictureBox25 };
+            PictureBox[] pictureBoxs = { pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox24, pictureBox25 };
             try
             {
-                newboxess[pb].Enabled = true;
-                newboxess[pb].Visible = true;
-                newboxess[pb].Load("http://cdn.akamai.steamstatic.com/steam/apps/" + appId + "/header.jpg");
+                pictureBoxs[pb].Enabled = true;
+                pictureBoxs[pb].Visible = true;
+                pictureBoxs[pb].Load("http://cdn.akamai.steamstatic.com/steam/apps/" + appId + "/header.jpg");
             }
             catch (Exception e)
             {
@@ -217,18 +215,72 @@ namespace DummyClassSolution
             }
         }
 
-
         //!!
-            //to do: Maybe change the functionality of click event in the control instead
-        //!!
+        //to do: Maybe change the functionality of click event in the control instead
         private void GamePictureBox_Click(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
-            Size full = new Size(597, 198);
-            Size regular = new Size(196, 142);
-            pb.Parent.Size = pb.Parent.Size != full ? full : regular;
-            pb.Dock = DockStyle.Left;
 
+            ToggleGameInfo(pb);
+            
+            //pb.Dock = DockStyle.Left;
+        }
+
+        private void ToggleGameInfo(PictureBox pb)
+        {
+            SetGameInfo(pb);
+            Size full = new Size(597, 142);
+            Size regular = new Size(196, 142);
+            TableLayoutPanel tpl = pb.Parent as TableLayoutPanel;
+            tpl.Size = tpl.Size != full ? full : regular;
+
+            if (tpl.ColumnStyles[0].Width != 29)
+            {
+                tpl.ColumnStyles[0].SizeType = SizeType.Percent;
+                tpl.ColumnStyles[0].Width = 29;
+                tpl.ColumnStyles[1].SizeType = SizeType.Percent;
+                tpl.ColumnStyles[1].Width = 61;
+               
+            }
+            else
+            {
+                tpl.ColumnStyles[0].SizeType = SizeType.Percent;
+                tpl.ColumnStyles[0].Width = 100;
+                tpl.ColumnStyles[1].SizeType = SizeType.Percent;
+                tpl.ColumnStyles[1].Width = 0;
+            }
+        }
+
+        private void SetGameInfo(PictureBox pb)
+        {
+            DummyClass dummyClass = new DummyClass();
+            List<Game> formGameList = dummyClass.GetList();
+
+            foreach (Game game in formGameList)
+            {
+                if (game.AppId == GetClickedGame(pb))
+                {
+                    this.Text = game.Name;
+                    //gameTitleLabel.Text = game.Name;
+                    //pictureBox1.ImageLocation = pb.ImageLocation;
+                    textBox1.Text = game.Description;
+                    //developerLabel.Text += game.Developer;
+                    //releaseLabel.Text += game.ReleaseYear.ToString();
+                }
+            }
+        }
+
+        private int GetClickedGame(PictureBox pb)
+        {
+            string currentAppId = "";
+            foreach (char c in pb.ImageLocation)
+            {
+                if (char.IsDigit(c))
+                {
+                    currentAppId += c;
+                }
+            }
+            return Convert.ToInt32(currentAppId);
         }
 
         private void tableLayoutPanelTransformer_Click(object sender, EventArgs e)
