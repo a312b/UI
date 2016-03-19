@@ -65,7 +65,7 @@ namespace DummyClassSolution
 
             if (formGameList != null)
             {
-                this.Size = new Size(652, 529);
+                this.Size = new Size(Size.Width, Size.Height+300);
                 ClearGameListBox(gameLabels);
                 foreach (Game game in formGameList)
                 {

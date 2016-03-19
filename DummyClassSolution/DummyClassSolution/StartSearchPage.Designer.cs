@@ -39,6 +39,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gameModeListBox = new System.Windows.Forms.CheckedListBox();
             this.specifierCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
@@ -112,7 +113,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.minimumRank)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -281,6 +281,19 @@
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Visible = false;
             this.pictureBox11.Click += new System.EventHandler(this.GamePictureBox_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(199, 3);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.ShortcutsEnabled = false;
+            this.textBox1.Size = new System.Drawing.Size(1, 121);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.TabStop = false;
+            this.textBox1.Text = "Description of the game";
             // 
             // gameModeListBox
             // 
@@ -1171,26 +1184,13 @@
             this.checkBox1.Visible = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(199, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ShortcutsEnabled = false;
-            this.textBox1.Size = new System.Drawing.Size(1, 121);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TabStop = false;
-            this.textBox1.Text = "Description of the game";
-            // 
             // StartSearchPage
             // 
             this.AcceptButton = this.SearchButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(636, 467);
+            this.ClientSize = new System.Drawing.Size(636, 192);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
