@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// ReSharper disable SuggestVarOrType_SimpleTypes
 
 namespace DummyClassSolution
 {
@@ -16,6 +17,7 @@ namespace DummyClassSolution
         public StartSearchPage()
         {
             InitializeComponent();
+
         }
 
         private void steamIdTextBox_MouseClick(object sender, MouseEventArgs e)
@@ -46,10 +48,11 @@ namespace DummyClassSolution
             }
         }
 
-        int _combinedRank = 0;
+        private int _combinedRank = 0;
         private void SearchButton_Click(object sender, EventArgs e)
         {
             GenerateFilteredGameList();
+            //textBox1.Hide();
         }
 
         private void GenerateFilteredGameList()
@@ -59,13 +62,10 @@ namespace DummyClassSolution
             DummyClass dummy1 = new DummyClass();
             List<Game> formGameList = dummy1.GetGameListByName(steamId);
 
-            Label[] labels = { label2, label3, label4, label5, label6, label7, label8, label9, label10, label11 };
-            Label[] newlabels = { label13, label14, label15, label16, label17, label18, label19, label20, label21, label22, label23, label24, label25, label25, label26, label27 };
-
             if (formGameList != null)
             {
-                this.Size = new Size(652, 529);
-                ClearGameListBox(newlabels);
+                this.Size = new Size(Size.Width, 678);
+                ClearGameListBox();
                 foreach (Game game in formGameList)
                 {
                     _combinedRank = 0;
@@ -132,27 +132,35 @@ namespace DummyClassSolution
 
         private void LoadGameInfo(Game game, int roundCount)
         {
-            Label[] labels = {label2, label3, label4, label5, label6, label7, label8, label9, label10, label11};
-            Label[] newlabels = { label13, label14, label15, label16, label17, label18, label19, label20, label21, label22, label23, label24, label25, label25, label26, label27};
+            Label[] devLabels = { devLabel1, label14, label17, label20, label23, label26, label31, label34, label37, label40, label43, label46, label49, label52, label55};
+            Label[] releaseLabels = {releaseLabel1, label15, label18, label21, label23, label27, label32, label35, label36, label41, label42, label47, label50, label53, label56 };
+            Label[] gameLabels = { gameNameLabel1, label13, label16, label19, label22, label25, label30, label33, label36, label39, label42, label45, label48, label51, label54, label57 };
+            TextBox[] descriptionBoxes = {descriptionBox1, textBox1, textBox2, textBox3, textBox4, textBox5, textBox6, textBox7, textBox8, textBox9, textBox10, textBox11, textBox12, textBox13, textBox14, textBox15};
 
-            newlabels[roundCount].Text = game.Name;
-            newlabels[roundCount].Visible = true;
+            gameLabels[roundCount].Text = game.Name;
+            gameLabels[roundCount].Visible = true;
+            devLabels[roundCount].Text = "Developer: " + game.Developer;
+            descriptionBoxes[roundCount].Text = game.Description;
+            releaseLabels[roundCount].Text = "Release Year: " + game.ReleaseYear.ToString();
+            
             flowLayoutPanel2.Visible = true;
         }
 
-        private void ClearGameListBox(Label[] list)
+        private void ClearGameListBox()
         {
-            PictureBox[] boxes = {pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8 };
-            PictureBox[] newboxes = { pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox24, pictureBox25 };
-            
-            foreach (PictureBox t in newboxes)
+            PictureBox[] pictureBoxes = { gameThumbPictureBox1, gameThumbPictureBox11, gameThumbPictureBox12, gameThumbPictureBox13, gameThumbPictureBox14, gameThumbPictureBox15, gameThumbPictureBox16, gameThumbPictureBox17, gameThumbPictureBox18,
+                gameThumbPictureBox19, gameThumbPictureBox20, gameThumbPictureBox21, gameThumbPictureBox22, gameThumbPictureBox23, gameThumbPictureBox24, gameThumbPictureBox25 };
+            Label[] gameLabels = { gameNameLabel1, label13, label16, label19, label22, label25, label30, label33, label36, label39, label42, label45, label48, label51, label54, label57 };
+
+            foreach (PictureBox pb in pictureBoxes)
             {
-                if (t.Image != null)
+                if (pb.Image != null)
                 {
-                    t.Image = null;
+                    pb.Image = null;
                 }
             }
-            foreach (Label label in list)
+
+            foreach (Label label in gameLabels)
             {
                 label.Visible = false;
             }
@@ -161,13 +169,13 @@ namespace DummyClassSolution
 
         private void LoadHeaderImages(int appId, int pb)
         {
-            PictureBox[] boxess = {pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8};
-            PictureBox[] newboxess = { pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox24, pictureBox25 };
+            PictureBox[] pictureBoxes = { gameThumbPictureBox1, gameThumbPictureBox11, gameThumbPictureBox12, gameThumbPictureBox13, gameThumbPictureBox14, gameThumbPictureBox15, gameThumbPictureBox16, gameThumbPictureBox17, gameThumbPictureBox18,
+                gameThumbPictureBox19, gameThumbPictureBox20, gameThumbPictureBox21, gameThumbPictureBox22, gameThumbPictureBox23, gameThumbPictureBox24, gameThumbPictureBox25 };
             try
             {
-                newboxess[pb].Enabled = true;
-                newboxess[pb].Visible = true;
-                newboxess[pb].Load("http://cdn.akamai.steamstatic.com/steam/apps/" + appId + "/header.jpg");
+                pictureBoxes[pb].Enabled = true;
+                pictureBoxes[pb].Visible = true;
+                pictureBoxes[pb].Load("http://cdn.akamai.steamstatic.com/steam/apps/" + appId + "/header.jpg");
             }
             catch (Exception e)
             {
@@ -217,15 +225,89 @@ namespace DummyClassSolution
             }
         }
 
-
         //!!
-            //to do: Maybe change the functionality of click event in the control instead
-        //!!
+        //to do: Maybe change the functionality of click event in the control instead
         private void GamePictureBox_Click(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
-            GameShowForm gameForm = new GameShowForm(pb);
-            gameForm.Show();
+
+            if (pb != null) ResizeTablePanels(pb);
+        }
+
+        private void ResizeTablePanels(PictureBox pb)
+        {
+            Size full = new Size(597, 142);
+            Size regular = new Size(196, 142);
+            TableLayoutPanel tpl = pb.Parent as TableLayoutPanel;
+            tpl.Size = tpl.Size != full ? full : regular;
+
+            if (tpl.ColumnStyles[0].Width != 33)
+            {
+                tpl.ColumnStyles[0].SizeType = SizeType.Percent;
+                tpl.ColumnStyles[0].Width = 33;
+                tpl.ColumnStyles[1].SizeType = SizeType.Percent;
+                tpl.ColumnStyles[1].Width = 47;
+                tpl.ColumnStyles[2].SizeType = SizeType.Percent;
+                tpl.ColumnStyles[2].Width = 20;
+
+                tpl.RowStyles[0].SizeType = SizeType.Percent;
+                tpl.RowStyles[0].Height = 9;
+                tpl.RowStyles[1].SizeType = SizeType.Percent;
+                tpl.RowStyles[1].Height = 12;
+                tpl.RowStyles[2].SizeType = SizeType.Percent;
+                tpl.RowStyles[2].Height = 71;
+                tpl.RowStyles[3].SizeType = SizeType.Percent;
+                tpl.RowStyles[3].Height = 8;
+                //tpl.Location = new Point(3, 3); //to be worked on
+            }
+            else
+            {
+                tpl.ColumnStyles[0].SizeType = SizeType.Percent;
+                tpl.ColumnStyles[0].Width = 100;
+                tpl.ColumnStyles[1].SizeType = SizeType.Percent;
+                tpl.ColumnStyles[1].Width = 0;
+                tpl.ColumnStyles[2].SizeType = SizeType.Percent;
+                tpl.ColumnStyles[2].Width = 0;
+
+                tpl.RowStyles[0].SizeType = SizeType.Percent;
+                tpl.RowStyles[0].Height = 92;
+                tpl.RowStyles[1].SizeType = SizeType.Percent;
+                tpl.RowStyles[1].Height = 0;
+                tpl.RowStyles[2].SizeType = SizeType.Percent;
+                tpl.RowStyles[2].Height = 0;
+                tpl.RowStyles[3].SizeType = SizeType.Percent;
+                tpl.RowStyles[3].Height = 8;
+            }
+        }
+
+        private void StartSearchPage_Load(object sender, EventArgs e)
+        {
+            foreach (Control tlpControl in flowLayoutPanel2.Controls)
+            {
+                foreach (PictureBox pictureBox in tlpControl.Controls.OfType<PictureBox>())
+                {
+                    ResizeTablePanels(pictureBox);
+                }
+            }
+        }
+
+        private void btnSteamStore1_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+            string currentAppId = "";
+            foreach (PictureBox pb in btn.Parent.Controls.OfType<PictureBox>())
+            {
+                foreach (char c in pb.ImageLocation)
+                {
+                    if (char.IsDigit(c))
+                    {
+                        currentAppId += c;
+                    }
+                }
+            }
+            
+            System.Diagnostics.Process.Start("http://store.steampowered.com/app/" + currentAppId);
         }
     }
 }
