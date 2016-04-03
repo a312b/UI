@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using recommenderthemetest;
 
 namespace DummyClassSolution
 {
@@ -17,7 +18,7 @@ namespace DummyClassSolution
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartSearchPage());
+            Application.Run(new SteamTheme()); //StartSearchPage()
         }
     }
 }
