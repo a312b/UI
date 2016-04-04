@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using DummyClassSolution;
+using SteamSharp.steamStore.models;
 
 namespace recommenderthemetest
 {
@@ -15,7 +16,7 @@ namespace recommenderthemetest
         public const int HTCAPTION = 0x2;
 
         private int _combinedRank;
-
+        private readonly SteamSharp.SteamSharp _steamSharpTest = new SteamSharp.SteamSharp();
         public SteamTheme()
         {
             InitializeComponent();
@@ -61,8 +62,9 @@ namespace recommenderthemetest
             var roundCount = 0;
             var steamId = steamIdTextBox.Text.ToLower();
             var dummy1 = new DummyClass();
-            var formGameList = dummy1.GetGameListByName(steamId);
-
+            //var formGameList = dummy1.GetGameListByName(steamId);
+            string[] idArray = { "240", "80", "280", "400", "343780", "500", "374320", "10500", "252950", "300", "7940", "10180"}; //150, 22380, 377160 == nullreference på htmlagility //340, 570 == nullreference på prisen (der findes f.eks. "price_in_cents_with_discount" i stedet)
+            var formGameList = _steamSharpTest.GameListByIds(idArray);
             if (formGameList != null)
             {
                 Size = new Size(Size.Width, 621);
@@ -70,12 +72,9 @@ namespace recommenderthemetest
                 foreach (var game in formGameList)
                 {
                     _combinedRank = 0;
-                    if (CheckGenre(game) | CheckGameMode(game) | CheckSpecifier(game)) //rank >= minimumRank.Value
-                    {
-                        LoadHeaderImages(game.AppId, roundCount);
+                        LoadHeaderImages(game.data.steam_appid, roundCount);
                         LoadGameInfo(game, roundCount);
                         roundCount++;
-                    }
                 }
             }
         }
@@ -91,7 +90,7 @@ namespace recommenderthemetest
             return match;
         }
 
-        private bool CheckGameMode(Game game)
+        private bool CheckGameMode(Game game) //not implemented
         {
             var match = false;
             foreach (var tag in game.Genre)
@@ -102,7 +101,7 @@ namespace recommenderthemetest
             return match;
         }
 
-        private bool CheckGenre(Game game)
+        private bool CheckGenre(Game game) //not implemented
         {
             var match = false;
             foreach (var tag in game.Genre)
@@ -113,7 +112,7 @@ namespace recommenderthemetest
             return match;
         }
 
-        private void LoadGameInfo(Game game, int roundCount)
+        private void LoadGameInfo(SteamStoreGame game, int roundCount)
         {
             var SB = new StringBuilder();
             Label[] tagLabels =
@@ -148,16 +147,16 @@ namespace recommenderthemetest
             };
             if (roundCount < gameLabels.Length)
             {
-                gameLabels[roundCount].Text = game.Name;
+                gameLabels[roundCount].Text = game.data.name;
                 gameLabels[roundCount].Visible = true;
-                devLabels[roundCount].Text = "Developer: " + game.Developer;
-                descriptionBoxes[roundCount].Text = game.Description;
-                releaseLabels[roundCount].Text = game.ReleaseYear.ToString();
-                priceLabels[roundCount].Text = game.Price + " €";
-                foreach (var tag in game.Genre)
-                {
-                    SB.Append(tag + ", ");
-                }
+                foreach (var developer in game.data.developers)
+                    SB.Append(developer + ", ");
+                devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
+                descriptionBoxes[roundCount].Text = game.data.detailed_description;
+                releaseLabels[roundCount].Text = game.data.release_date.date;
+                    priceLabels[roundCount].Text = game.data.price_overview.final.ToString();
+                foreach (var tag in game.data.tags)
+                    SB.Append(tag.description + ", ");
                 tagLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
                 flowLayoutPanel1.Visible = true;
             }
