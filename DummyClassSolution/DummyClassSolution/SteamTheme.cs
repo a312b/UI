@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using DummyClassSolution;
 using SteamSharp.steamStore.models;
 
 namespace recommenderthemetest
@@ -265,6 +266,12 @@ namespace recommenderthemetest
             }
             var pbtpl = pbClick.Parent as TableLayoutPanel;
             return pbtpl;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Form frm = new DevPrompt();
+            frm.Show();
         }
     }
 }
