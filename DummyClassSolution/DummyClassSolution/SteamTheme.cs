@@ -5,7 +5,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using DummyClassSolution;
 using SteamSharp.steamStore.models;
 
 namespace recommenderthemetest
@@ -14,9 +13,10 @@ namespace recommenderthemetest
     {
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
+        private readonly SteamSharp.SteamSharp _steamSharpTest = new SteamSharp.SteamSharp();
 
         private int _combinedRank;
-        private readonly SteamSharp.SteamSharp _steamSharpTest = new SteamSharp.SteamSharp();
+
         public SteamTheme()
         {
             InitializeComponent();
@@ -27,10 +27,6 @@ namespace recommenderthemetest
 
         [DllImport("User32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -61,9 +57,12 @@ namespace recommenderthemetest
         {
             var roundCount = 0;
             var steamId = steamIdTextBox.Text.ToLower();
-            var dummy1 = new DummyClass();
-            //var formGameList = dummy1.GetGameListByName(steamId);
-            string[] idArray = { "240", "80", "280", "400", "343780", "500", "374320", "10500", "252950", "300", "7940", "10180"}; //150, 22380, 377160 == nullreference på htmlagility //340, 570 == nullreference på prisen (der findes f.eks. "price_in_cents_with_discount" i stedet)
+            string[] idArray =
+            {
+                "240", "80", "280", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
+                "10180"
+            };//150, 22380, 377160 == nullreference på htmlagility //340, 570 == nullreference på prisen (der findes f.eks. "price_in_cents_with_discount" i stedet)
+
             var formGameList = _steamSharpTest.GameListByIds(idArray);
             if (formGameList != null)
             {
@@ -72,44 +71,11 @@ namespace recommenderthemetest
                 foreach (var game in formGameList)
                 {
                     _combinedRank = 0;
-                        LoadHeaderImages(game.data.steam_appid, roundCount);
-                        LoadGameInfo(game, roundCount);
-                        roundCount++;
+                    LoadHeaderImages(game.data.steam_appid, roundCount);
+                    LoadGameInfo(game, roundCount);
+                    roundCount++;
                 }
             }
-        }
-
-        private bool CheckSpecifier(Game game) //not implemented
-        {
-            var match = false;
-            foreach (var tag in game.Genre)
-            {
-                _combinedRank++;
-                match = true;
-            }
-            return match;
-        }
-
-        private bool CheckGameMode(Game game) //not implemented
-        {
-            var match = false;
-            foreach (var tag in game.Genre)
-            {
-                _combinedRank++;
-                match = true;
-            }
-            return match;
-        }
-
-        private bool CheckGenre(Game game) //not implemented
-        {
-            var match = false;
-            foreach (var tag in game.Genre)
-            {
-                _combinedRank++;
-                match = true;
-            }
-            return match;
         }
 
         private void LoadGameInfo(SteamStoreGame game, int roundCount)
@@ -145,6 +111,7 @@ namespace recommenderthemetest
                 richTextBox1, richTextBox2, richTextBox3, richTextBox4, richTextBox5,
                 richTextBox6, richTextBox7, richTextBox8, richTextBox9, richTextBox10, richTextBox11, richTextBox12
             };
+
             if (roundCount < gameLabels.Length)
             {
                 gameLabels[roundCount].Text = game.data.name;
@@ -154,7 +121,7 @@ namespace recommenderthemetest
                 devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
                 descriptionBoxes[roundCount].Text = game.data.detailed_description;
                 releaseLabels[roundCount].Text = game.data.release_date.date;
-                    priceLabels[roundCount].Text = game.data.price_overview.final.ToString();
+                priceLabels[roundCount].Text = game.data.price_overview.final.ToString();
                 foreach (var tag in game.data.tags)
                     SB.Append(tag.description + ", ");
                 tagLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
@@ -208,51 +175,6 @@ namespace recommenderthemetest
                 Debug.WriteLine("{0} exception caught", e);
             }
         }
-
-        //private void genreCheckListBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (checkBox1.Checked)
-        //    {
-        //        minimumRank.Value = genreCheckListBox.CheckedItems.Count + gameModeListBox.CheckedItems.Count + specifierCheckedListBox.CheckedItems.Count;
-        //    }
-        //}
-
-        //private void gameModeListBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (checkBox1.Checked)
-        //    {
-        //        minimumRank.Value = genreCheckListBox.CheckedItems.Count + gameModeListBox.CheckedItems.Count + specifierCheckedListBox.CheckedItems.Count;
-        //    }
-        //}
-
-        //private void specifierListBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (checkBox1.Checked)
-        //    {
-        //        minimumRank.Value = genreCheckListBox.CheckedItems.Count + gameModeListBox.CheckedItems.Count + specifierCheckedListBox.CheckedItems.Count;
-        //    }
-        //}
-
-        //private void label1_Click(object sender, EventArgs e)
-        //{
-        //    minimumRank.Visible = !minimumRank.Visible;
-        //    checkBox1.Visible = !checkBox1.Visible;
-        //}
-
-        //private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if (checkBox1.Checked)
-        //    {
-        //        minimumRank.Value = genreCheckListBox.CheckedItems.Count + gameModeListBox.CheckedItems.Count + specifierCheckedListBox.CheckedItems.Count;
-        //    }
-        //    else
-        //    {
-        //        minimumRank.Value = 0;
-        //    }
-        //}
-
-        //!!
-        //to do: Maybe change the functionality of click event in the control instead
 
         private void ResizeTablePanels(TableLayoutPanel sender)
         {
