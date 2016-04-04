@@ -59,7 +59,7 @@ namespace recommenderthemetest
             var steamId = steamIdTextBox.Text.ToLower();
             string[] idArray =
             {
-                "240", "80", "280", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
+                "280","80", "240", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
                 "10180"
             };//150, 22380, 377160 == nullreference på htmlagility //340, 570 == nullreference på prisen (der findes f.eks. "price_in_cents_with_discount" i stedet)
 
@@ -122,9 +122,11 @@ namespace recommenderthemetest
                 descriptionBoxes[roundCount].Text = game.data.detailed_description;
                 releaseLabels[roundCount].Text = game.data.release_date.date;
                 priceLabels[roundCount].Text = game.data.price_overview.final.ToString();
+                priceLabels[roundCount].Visible = true;
                 foreach (var tag in game.data.tags)
                     SB.Append(tag.description + ", ");
                 tagLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
+                tagLabels[roundCount].Visible = true;
                 flowLayoutPanel1.Visible = true;
             }
         }
@@ -138,8 +140,8 @@ namespace recommenderthemetest
             };
             Label[] gameLabels =
             {
-                label2, label6, label11, label16, label21, label26, label31, label36, label41, label46,
-                label51, label56
+                label2, label6, label11, label16, label21, label26, label31, label36, label41,
+                label46, label51, label56
             };
 
             foreach (var pb in pictureBoxes)
@@ -150,9 +152,9 @@ namespace recommenderthemetest
                 }
             }
 
-            foreach (var label in gameLabels)
+            foreach (Label gameLabel in gameLabels)
             {
-                label.Visible = false;
+                gameLabel.Visible = false;
             }
             flowLayoutPanel1.Visible = false;
         }

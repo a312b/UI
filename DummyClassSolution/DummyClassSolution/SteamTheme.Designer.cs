@@ -37,6 +37,7 @@
             this.btnSteamStore = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -155,7 +156,6 @@
             this.label59 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -326,6 +326,18 @@
             this.flowLayoutPanel1.Visible = false;
             this.flowLayoutPanel1.WrapContents = false;
             // 
+            // tableLayoutPanel24
+            // 
+            this.tableLayoutPanel24.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel24.ColumnCount = 1;
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel24.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
+            this.tableLayoutPanel24.RowCount = 1;
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel24.TabIndex = 12;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -432,6 +444,7 @@
             this.label1.Size = new System.Drawing.Size(43, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tags, Tags, Tags, Tags";
+            this.label1.Visible = false;
             // 
             // label3
             // 
@@ -443,6 +456,7 @@
             this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Price/€";
+            this.label3.Visible = false;
             // 
             // tableLayoutPanel23
             // 
@@ -562,6 +576,7 @@
             this.label9.Size = new System.Drawing.Size(43, 18);
             this.label9.TabIndex = 1;
             this.label9.Text = "Tags, Tags, Tags, Tags";
+            this.label9.Visible = false;
             // 
             // label10
             // 
@@ -573,6 +588,7 @@
             this.label10.Size = new System.Drawing.Size(57, 16);
             this.label10.TabIndex = 3;
             this.label10.Text = "Price/€";
+            this.label10.Visible = false;
             // 
             // button3
             // 
@@ -711,6 +727,7 @@
             this.label14.Size = new System.Drawing.Size(43, 18);
             this.label14.TabIndex = 1;
             this.label14.Text = "Tags, Tags, Tags, Tags";
+            this.label14.Visible = false;
             // 
             // label15
             // 
@@ -722,6 +739,7 @@
             this.label15.Size = new System.Drawing.Size(57, 16);
             this.label15.TabIndex = 3;
             this.label15.Text = "Price/€";
+            this.label15.Visible = false;
             // 
             // button4
             // 
@@ -860,6 +878,7 @@
             this.label19.Size = new System.Drawing.Size(43, 18);
             this.label19.TabIndex = 1;
             this.label19.Text = "Tags, Tags, Tags, Tags";
+            this.label19.Visible = false;
             // 
             // label20
             // 
@@ -871,6 +890,7 @@
             this.label20.Size = new System.Drawing.Size(57, 16);
             this.label20.TabIndex = 3;
             this.label20.Text = "Price/€";
+            this.label20.Visible = false;
             // 
             // button5
             // 
@@ -1009,6 +1029,7 @@
             this.label24.Size = new System.Drawing.Size(43, 18);
             this.label24.TabIndex = 1;
             this.label24.Text = "Tags, Tags, Tags, Tags";
+            this.label24.Visible = false;
             // 
             // label25
             // 
@@ -1020,6 +1041,7 @@
             this.label25.Size = new System.Drawing.Size(57, 16);
             this.label25.TabIndex = 3;
             this.label25.Text = "Price/€";
+            this.label25.Visible = false;
             // 
             // button6
             // 
@@ -1158,6 +1180,7 @@
             this.label29.Size = new System.Drawing.Size(43, 18);
             this.label29.TabIndex = 1;
             this.label29.Text = "Tags, Tags, Tags, Tags";
+            this.label29.Visible = false;
             // 
             // label30
             // 
@@ -1169,6 +1192,7 @@
             this.label30.Size = new System.Drawing.Size(57, 16);
             this.label30.TabIndex = 3;
             this.label30.Text = "Price/€";
+            this.label30.Visible = false;
             // 
             // button7
             // 
@@ -1307,6 +1331,7 @@
             this.label34.Size = new System.Drawing.Size(43, 18);
             this.label34.TabIndex = 1;
             this.label34.Text = "Tags, Tags, Tags, Tags";
+            this.label34.Visible = false;
             // 
             // label35
             // 
@@ -1318,6 +1343,7 @@
             this.label35.Size = new System.Drawing.Size(57, 16);
             this.label35.TabIndex = 3;
             this.label35.Text = "Price/€";
+            this.label35.Visible = false;
             // 
             // button8
             // 
@@ -1456,6 +1482,7 @@
             this.label39.Size = new System.Drawing.Size(43, 18);
             this.label39.TabIndex = 1;
             this.label39.Text = "Tags, Tags, Tags, Tags";
+            this.label39.Visible = false;
             // 
             // label40
             // 
@@ -1467,6 +1494,7 @@
             this.label40.Size = new System.Drawing.Size(57, 16);
             this.label40.TabIndex = 3;
             this.label40.Text = "Price/€";
+            this.label40.Visible = false;
             // 
             // button9
             // 
@@ -1605,6 +1633,7 @@
             this.label44.Size = new System.Drawing.Size(43, 18);
             this.label44.TabIndex = 1;
             this.label44.Text = "Tags, Tags, Tags, Tags";
+            this.label44.Visible = false;
             // 
             // label45
             // 
@@ -1616,6 +1645,7 @@
             this.label45.Size = new System.Drawing.Size(57, 16);
             this.label45.TabIndex = 3;
             this.label45.Text = "Price/€";
+            this.label45.Visible = false;
             // 
             // button10
             // 
@@ -1754,6 +1784,7 @@
             this.label49.Size = new System.Drawing.Size(43, 18);
             this.label49.TabIndex = 1;
             this.label49.Text = "Tags, Tags, Tags, Tags";
+            this.label49.Visible = false;
             // 
             // label50
             // 
@@ -1765,6 +1796,7 @@
             this.label50.Size = new System.Drawing.Size(57, 16);
             this.label50.TabIndex = 3;
             this.label50.Text = "Price/€";
+            this.label50.Visible = false;
             // 
             // button11
             // 
@@ -1903,6 +1935,7 @@
             this.label54.Size = new System.Drawing.Size(43, 18);
             this.label54.TabIndex = 1;
             this.label54.Text = "Tags, Tags, Tags, Tags";
+            this.label54.Visible = false;
             // 
             // label55
             // 
@@ -1914,6 +1947,7 @@
             this.label55.Size = new System.Drawing.Size(57, 16);
             this.label55.TabIndex = 3;
             this.label55.Text = "Price/€";
+            this.label55.Visible = false;
             // 
             // button12
             // 
@@ -1970,6 +2004,7 @@
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(646, 104);
             this.tableLayoutPanel12.TabIndex = 23;
+            this.tableLayoutPanel12.Click += new System.EventHandler(this.object_Click);
             // 
             // pictureBox12
             // 
@@ -1981,6 +2016,7 @@
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 0;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.object_Click);
             // 
             // label56
             // 
@@ -1993,6 +2029,7 @@
             this.label56.Size = new System.Drawing.Size(51, 16);
             this.label56.TabIndex = 2;
             this.label56.Text = "Game";
+            this.label56.Click += new System.EventHandler(this.object_Click);
             // 
             // richTextBox12
             // 
@@ -2010,6 +2047,7 @@
             this.richTextBox12.TabStop = false;
             this.richTextBox12.Text = "Description \nof \nthe \ngame";
             this.richTextBox12.Visible = false;
+            this.richTextBox12.Click += new System.EventHandler(this.object_Click);
             // 
             // label57
             // 
@@ -2048,6 +2086,7 @@
             this.label59.Size = new System.Drawing.Size(43, 18);
             this.label59.TabIndex = 1;
             this.label59.Text = "Tags, Tags, Tags, Tags";
+            this.label59.Visible = false;
             // 
             // label60
             // 
@@ -2059,6 +2098,7 @@
             this.label60.Size = new System.Drawing.Size(57, 16);
             this.label60.TabIndex = 3;
             this.label60.Text = "Price/€";
+            this.label60.Visible = false;
             // 
             // button13
             // 
@@ -2078,18 +2118,6 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Visible = false;
             this.button13.Click += new System.EventHandler(this.btnSteamStore1_Click);
-            // 
-            // tableLayoutPanel24
-            // 
-            this.tableLayoutPanel24.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel24.ColumnCount = 1;
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel24.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
-            this.tableLayoutPanel24.RowCount = 1;
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel24.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel24.TabIndex = 12;
             // 
             // SteamTheme
             // 
