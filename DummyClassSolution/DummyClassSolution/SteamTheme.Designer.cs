@@ -591,6 +591,7 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // tableLayoutPanel13
             // 
@@ -739,6 +740,7 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // tableLayoutPanel22
             // 
@@ -887,6 +889,7 @@
             this.button5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Visible = false;
+            this.button5.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // tableLayoutPanel21
             // 
@@ -1035,6 +1038,7 @@
             this.button6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Visible = false;
+            this.button6.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // tableLayoutPanel18
             // 
@@ -1183,6 +1187,7 @@
             this.button7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Visible = false;
+            this.button7.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // tableLayoutPanel15
             // 
@@ -1331,6 +1336,7 @@
             this.button8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Visible = false;
+            this.button8.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // tableLayoutPanel14
             // 
@@ -1479,6 +1485,7 @@
             this.button9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Visible = false;
+            this.button9.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // tableLayoutPanel20
             // 
@@ -1627,6 +1634,7 @@
             this.button10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Visible = false;
+            this.button10.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // tableLayoutPanel16
             // 
@@ -1775,6 +1783,7 @@
             this.button11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Visible = false;
+            this.button11.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // tableLayoutPanel19
             // 
@@ -1923,6 +1932,7 @@
             this.button12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Visible = false;
+            this.button12.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // tableLayoutPanel17
             // 
@@ -2067,6 +2077,7 @@
             this.button13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Visible = false;
+            this.button13.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // tableLayoutPanel24
             // 
