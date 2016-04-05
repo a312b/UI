@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DummyClassSolution.SteamTheme;
 
 namespace DummyClassSolution
 {
@@ -25,23 +26,28 @@ namespace DummyClassSolution
         [DllImport("User32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default["DevKey"] = devKey.Text;
-            Properties.Settings.Default.Save(); // Saves settings in application configuration file
+            devKey = devKeyTextBox.Text;
+            if (saveCheckBox1.Checked)
+            {
+                Properties.Settings.Default.DevKey = devKey;
+                Properties.Settings.Default.Save(); // Saves settings in application configuration file
+            }
+            Close();
         }
 
         private void DevPrompt_Load(object sender, EventArgs e)
         {
-            devKey.Text = Properties.Settings.Default.DevKey;
+            devKeyTextBox.Text = Properties.Settings.Default.DevKey;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnMin_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }

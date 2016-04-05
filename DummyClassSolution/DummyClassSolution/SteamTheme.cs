@@ -5,17 +5,16 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using DummyClassSolution;
 using SteamSharp.steamStore.models;
 
-namespace recommenderthemetest
+namespace DummyClassSolution
 {
     public partial class SteamTheme : Form
     {
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
         private readonly SteamSharp.SteamSharp _steamSharpTest = new SteamSharp.SteamSharp();
-
+        public static string devKey = Properties.Settings.Default.DevKey;
         private int _combinedRank;
 
         public SteamTheme()
@@ -122,7 +121,7 @@ namespace recommenderthemetest
                 devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
                 descriptionBoxes[roundCount].Text = game.data.detailed_description;
                 releaseLabels[roundCount].Text = game.data.release_date.date;
-                priceLabels[roundCount].Text = game.data.price_overview.final.ToString();
+                priceLabels[roundCount].Text = game.data.price_overview.final + " €";
                 priceLabels[roundCount].Visible = true;
                 foreach (var tag in game.data.tags)
                     SB.Append(tag.description + ", ");
@@ -270,8 +269,8 @@ namespace recommenderthemetest
 
         private void button14_Click(object sender, EventArgs e)
         {
-            Form frm = new DevPrompt();
-            frm.Show();
+            Form devPrompt = new DevPrompt();
+            devPrompt.ShowDialog();
         }
     }
 }
