@@ -33,7 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnDevKey = new System.Windows.Forms.Button();
             this.steamIdTextBox = new System.Windows.Forms.TextBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnSteamStore = new System.Windows.Forms.Button();
@@ -226,7 +226,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.panel1.Controls.Add(this.button14);
+            this.panel1.Controls.Add(this.btnDevKey);
             this.panel1.Controls.Add(this.steamIdTextBox);
             this.panel1.Controls.Add(this.btnStart);
             this.panel1.Location = new System.Drawing.Point(12, 29);
@@ -234,23 +234,23 @@
             this.panel1.Size = new System.Drawing.Size(672, 580);
             this.panel1.TabIndex = 3;
             // 
-            // button14
+            // btnDevKey
             // 
-            this.button14.BackColor = System.Drawing.Color.Transparent;
-            this.button14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button14.BackgroundImage")));
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Location = new System.Drawing.Point(656, 3);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(13, 13);
-            this.button14.TabIndex = 2;
-            this.devToolTip1.SetToolTip(this.button14, "Developer Key settings");
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.btnDevKey.BackColor = System.Drawing.Color.Transparent;
+            this.btnDevKey.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDevKey.BackgroundImage")));
+            this.btnDevKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDevKey.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDevKey.FlatAppearance.BorderSize = 0;
+            this.btnDevKey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnDevKey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnDevKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevKey.Location = new System.Drawing.Point(656, 3);
+            this.btnDevKey.Name = "btnDevKey";
+            this.btnDevKey.Size = new System.Drawing.Size(13, 13);
+            this.btnDevKey.TabIndex = 2;
+            this.devToolTip1.SetToolTip(this.btnDevKey, "Developer Key settings");
+            this.btnDevKey.UseVisualStyleBackColor = false;
+            this.btnDevKey.Click += new System.EventHandler(this.btnDevKey_Click);
             // 
             // steamIdTextBox
             // 
@@ -2144,6 +2144,10 @@
             this.button13.Visible = false;
             this.button13.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
+            // devToolTip1
+            // 
+            this.devToolTip1.AutomaticDelay = 200;
+            // 
             // SteamTheme
             // 
             this.AcceptButton = this.btnStart;
@@ -2336,7 +2340,7 @@
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnDevKey;
         private System.Windows.Forms.ToolTip devToolTip1;
     }
 }

@@ -124,7 +124,7 @@
             this.devKeyTextBox.Name = "devKeyTextBox";
             this.devKeyTextBox.Size = new System.Drawing.Size(252, 23);
             this.devKeyTextBox.TabIndex = 2;
-            this.devKeyTextBox.Text = "Developer Key";
+            this.devKeyTextBox.Text = "Developer API Key";
             this.devKeyTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
@@ -134,9 +134,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(173)))), ((int)(((byte)(173)))));
             this.label1.Location = new System.Drawing.Point(3, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 17);
+            this.label1.Size = new System.Drawing.Size(116, 17);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Developer Key";
+            this.label1.Text = "Developer API Key";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DevPrompt_MouseDown);
             // 
             // DevPrompt

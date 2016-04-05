@@ -59,7 +59,7 @@ namespace DummyClassSolution
             var steamId = steamIdTextBox.Text.ToLower();
             string[] idArray =
             {
-                "280","80", "240", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
+                "340", "280", "570", "80", "240", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
                 "10180"
             };//150, 22380, 377160 == nullreference på htmlagility //340, 570 == nullreference på prisen (der findes f.eks. "price_in_cents_with_discount" i stedet)
 
@@ -121,8 +121,16 @@ namespace DummyClassSolution
                 devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
                 descriptionBoxes[roundCount].Text = game.data.detailed_description;
                 releaseLabels[roundCount].Text = game.data.release_date.date;
-                priceLabels[roundCount].Text = game.data.price_overview.final + " €";
+                try //error handeling while price can return null
+                {
+                    game.data.price_overview.final.ToString();
+                    priceLabels[roundCount].Text = game.data.price_overview.final + " €";
+                }
+                catch (Exception)
+                {
+                }
                 priceLabels[roundCount].Visible = true;
+                SB.Clear();
                 foreach (var tag in game.data.tags)
                     SB.Append(tag.description + ", ");
                 tagLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
@@ -239,13 +247,15 @@ namespace DummyClassSolution
         {
             GenerateFilteredGameList();
         }
-
+        //Event: Clicking on the specified object calls the TLP converter and 
         private void object_Click(object sender, EventArgs e)
         {
             var tableObject = tplConverter(sender) as TableLayoutPanel;
             ResizeTablePanels(tableObject);
         }
 
+        //Makes sure the returned type is a TableLayoutPanel(TLP) by 
+        //converting the object clicked (PictureBox, TextBox or TableLayoutpanel) to a TLP
         private object tplConverter(object sender)
         {
             var tableClickTpl = sender as TableLayoutPanel;
@@ -266,8 +276,8 @@ namespace DummyClassSolution
             var pbtpl = pbClick.Parent as TableLayoutPanel;
             return pbtpl;
         }
-
-        private void button14_Click(object sender, EventArgs e)
+        //Prompts the user for a steam API key obtained at http://steamcommunity.com/dev/apikey
+        private void btnDevKey_Click(object sender, EventArgs e)
         {
             Form devPrompt = new DevPrompt();
             devPrompt.ShowDialog();
