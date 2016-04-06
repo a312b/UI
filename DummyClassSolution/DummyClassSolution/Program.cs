@@ -17,7 +17,7 @@ namespace DummyClassSolution
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartSearchPage());
+            Application.Run(new SteamTheme()); //StartSearchPage()
         }
     }
 }

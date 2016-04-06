@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace DummyClassSolution
 {
-    public partial class StartSearchPage : Form
+    public partial class TagFilterHolder : Form
     {
-        public StartSearchPage()
+        public TagFilterHolder()
         {
             InitializeComponent();
 

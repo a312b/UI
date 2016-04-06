@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SteamSharp">
+      <HintPath>..\..\..\SteamSharp\SteamSharp\bin\Debug\SteamSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,16 +50,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DummyClass.cs" />
-    <Compile Include="StartSearchPage.cs">
+    <Compile Include="DevPrompt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartSearchPage.Designer.cs">
-      <DependentUpon>StartSearchPage.cs</DependentUpon>
+    <Compile Include="DevPrompt.Designer.cs">
+      <DependentUpon>DevPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TagFilterHolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TagFilterHolder.Designer.cs">
+      <DependentUpon>TagFilterHolder.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="StartSearchPage.resx">
-      <DependentUpon>StartSearchPage.cs</DependentUpon>
+    <Compile Include="SteamTheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SteamTheme.Designer.cs">
+      <DependentUpon>SteamTheme.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DevPrompt.resx">
+      <DependentUpon>DevPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TagFilterHolder.resx">
+      <DependentUpon>TagFilterHolder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +85,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SteamTheme.resx">
+      <DependentUpon>SteamTheme.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

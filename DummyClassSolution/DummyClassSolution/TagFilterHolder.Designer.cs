@@ -1,6 +1,6 @@
 ﻿namespace DummyClassSolution
 {
-    partial class StartSearchPage
+    partial class TagFilterHolder
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartSearchPage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TagFilterHolder));
             this.steamIdTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.genreCheckListBox = new System.Windows.Forms.CheckedListBox();
             this.minimumRank = new System.Windows.Forms.NumericUpDown();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.label42 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.gameThumbPictureBox20 = new System.Windows.Forms.PictureBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.label51 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.gameThumbPictureBox23 = new System.Windows.Forms.PictureBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.gameNameLabel1 = new System.Windows.Forms.Label();
             this.descriptionBox1 = new System.Windows.Forms.TextBox();
@@ -106,13 +120,6 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.label42 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.gameThumbPictureBox20 = new System.Windows.Forms.PictureBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.label45 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -127,13 +134,6 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.label51 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.gameThumbPictureBox23 = new System.Windows.Forms.PictureBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.label54 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
@@ -179,7 +179,13 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.minimumRank)).BeginInit();
+            this.tableLayoutPanel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox20)).BeginInit();
+            this.tableLayoutPanel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox23)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -200,14 +206,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox18)).BeginInit();
             this.tableLayoutPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox19)).BeginInit();
-            this.tableLayoutPanel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox20)).BeginInit();
             this.tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox21)).BeginInit();
             this.tableLayoutPanel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox22)).BeginInit();
-            this.tableLayoutPanel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox23)).BeginInit();
             this.tableLayoutPanel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox24)).BeginInit();
             this.tableLayoutPanel16.SuspendLayout();
@@ -228,7 +230,7 @@
             // 
             // steamIdTextBox
             // 
-            this.steamIdTextBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.steamIdTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.steamIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.steamIdTextBox.Location = new System.Drawing.Point(215, 18);
             this.steamIdTextBox.Margin = new System.Windows.Forms.Padding(2);
@@ -242,8 +244,7 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchButton.BackColor = System.Drawing.SystemColors.Control;
             this.SearchButton.Location = new System.Drawing.Point(336, 15);
             this.SearchButton.Margin = new System.Windows.Forms.Padding(2);
             this.SearchButton.Name = "SearchButton";
@@ -255,7 +256,7 @@
             // 
             // genreCheckListBox
             // 
-            this.genreCheckListBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.genreCheckListBox.BackColor = System.Drawing.SystemColors.Window;
             this.genreCheckListBox.CheckOnClick = true;
             this.genreCheckListBox.FormattingEnabled = true;
             this.genreCheckListBox.Items.AddRange(new object[] {
@@ -274,7 +275,7 @@
             // 
             // minimumRank
             // 
-            this.minimumRank.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.minimumRank.BackColor = System.Drawing.SystemColors.Window;
             this.minimumRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimumRank.Location = new System.Drawing.Point(593, 80);
             this.minimumRank.Name = "minimumRank";
@@ -307,6 +308,194 @@
         "ring it will increase results.\r\nCLICK this label to expand or hide the rank sele" +
         "ction.");
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 3;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel11.Controls.Add(this.label42, 0, 3);
+            this.tableLayoutPanel11.Controls.Add(this.textBox10, 1, 2);
+            this.tableLayoutPanel11.Controls.Add(this.gameThumbPictureBox20, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.label43, 1, 0);
+            this.tableLayoutPanel11.Controls.Add(this.label44, 1, 1);
+            this.tableLayoutPanel11.Controls.Add(this.button10, 2, 0);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 1483);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 4;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(597, 142);
+            this.tableLayoutPanel11.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.tableLayoutPanel11, "597, 198");
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Enabled = false;
+            this.label42.Location = new System.Drawing.Point(3, 129);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(41, 13);
+            this.label42.TabIndex = 0;
+            this.label42.Text = "label42";
+            this.label42.Visible = false;
+            // 
+            // textBox10
+            // 
+            this.textBox10.BackColor = System.Drawing.Color.SteelBlue;
+            this.tableLayoutPanel11.SetColumnSpan(this.textBox10, 2);
+            this.textBox10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox10.Location = new System.Drawing.Point(200, 32);
+            this.textBox10.Multiline = true;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
+            this.textBox10.ShortcutsEnabled = false;
+            this.textBox10.Size = new System.Drawing.Size(394, 94);
+            this.textBox10.TabIndex = 2;
+            this.textBox10.TabStop = false;
+            this.textBox10.Text = "Description of the game";
+            // 
+            // gameThumbPictureBox20
+            // 
+            this.gameThumbPictureBox20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gameThumbPictureBox20.Enabled = false;
+            this.gameThumbPictureBox20.Location = new System.Drawing.Point(3, 3);
+            this.gameThumbPictureBox20.Name = "gameThumbPictureBox20";
+            this.tableLayoutPanel11.SetRowSpan(this.gameThumbPictureBox20, 3);
+            this.gameThumbPictureBox20.Size = new System.Drawing.Size(191, 123);
+            this.gameThumbPictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gameThumbPictureBox20.TabIndex = 1;
+            this.gameThumbPictureBox20.TabStop = false;
+            this.gameThumbPictureBox20.Visible = false;
+            this.gameThumbPictureBox20.Click += new System.EventHandler(this.GamePictureBox_Click);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(200, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(62, 12);
+            this.label43.TabIndex = 3;
+            this.label43.Text = "Developer: ";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(200, 12);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(77, 13);
+            this.label44.TabIndex = 4;
+            this.label44.Text = "Release Year: ";
+            // 
+            // button10
+            // 
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(480, 3);
+            this.button10.Name = "button10";
+            this.tableLayoutPanel11.SetRowSpan(this.button10, 2);
+            this.button10.Size = new System.Drawing.Size(114, 23);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "Steam Store";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.ColumnCount = 3;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel14.Controls.Add(this.label51, 0, 3);
+            this.tableLayoutPanel14.Controls.Add(this.textBox13, 1, 2);
+            this.tableLayoutPanel14.Controls.Add(this.gameThumbPictureBox23, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.label52, 1, 0);
+            this.tableLayoutPanel14.Controls.Add(this.label53, 1, 1);
+            this.tableLayoutPanel14.Controls.Add(this.button13, 2, 0);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 1927);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 4;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(597, 142);
+            this.tableLayoutPanel14.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.tableLayoutPanel14, "597, 198");
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Enabled = false;
+            this.label51.Location = new System.Drawing.Point(3, 129);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(41, 13);
+            this.label51.TabIndex = 0;
+            this.label51.Text = "label51";
+            this.label51.Visible = false;
+            // 
+            // textBox13
+            // 
+            this.textBox13.BackColor = System.Drawing.Color.SteelBlue;
+            this.tableLayoutPanel14.SetColumnSpan(this.textBox13, 2);
+            this.textBox13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox13.Location = new System.Drawing.Point(200, 32);
+            this.textBox13.Multiline = true;
+            this.textBox13.Name = "textBox13";
+            this.textBox13.ReadOnly = true;
+            this.textBox13.ShortcutsEnabled = false;
+            this.textBox13.Size = new System.Drawing.Size(394, 94);
+            this.textBox13.TabIndex = 2;
+            this.textBox13.TabStop = false;
+            this.textBox13.Text = "Description of the game";
+            // 
+            // gameThumbPictureBox23
+            // 
+            this.gameThumbPictureBox23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gameThumbPictureBox23.Enabled = false;
+            this.gameThumbPictureBox23.Location = new System.Drawing.Point(3, 3);
+            this.gameThumbPictureBox23.Name = "gameThumbPictureBox23";
+            this.tableLayoutPanel14.SetRowSpan(this.gameThumbPictureBox23, 3);
+            this.gameThumbPictureBox23.Size = new System.Drawing.Size(191, 123);
+            this.gameThumbPictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gameThumbPictureBox23.TabIndex = 1;
+            this.gameThumbPictureBox23.TabStop = false;
+            this.gameThumbPictureBox23.Visible = false;
+            this.gameThumbPictureBox23.Click += new System.EventHandler(this.GamePictureBox_Click);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(200, 0);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(62, 12);
+            this.label52.TabIndex = 3;
+            this.label52.Text = "Developer: ";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(200, 12);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(77, 13);
+            this.label53.TabIndex = 4;
+            this.label53.Text = "Release Year: ";
+            // 
+            // button13
+            // 
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Image = ((System.Drawing.Image)(resources.GetObject("button13.Image")));
+            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button13.Location = new System.Drawing.Point(480, 3);
+            this.button13.Name = "button13";
+            this.tableLayoutPanel14.SetRowSpan(this.button13, 2);
+            this.button13.Size = new System.Drawing.Size(114, 23);
+            this.button13.TabIndex = 5;
+            this.button13.Text = "Steam Store";
+            this.button13.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
@@ -1239,100 +1428,6 @@
             this.button9.Text = "Steam Store";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel11
-            // 
-            this.tableLayoutPanel11.ColumnCount = 3;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel11.Controls.Add(this.label42, 0, 3);
-            this.tableLayoutPanel11.Controls.Add(this.textBox10, 1, 2);
-            this.tableLayoutPanel11.Controls.Add(this.gameThumbPictureBox20, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.label43, 1, 0);
-            this.tableLayoutPanel11.Controls.Add(this.label44, 1, 1);
-            this.tableLayoutPanel11.Controls.Add(this.button10, 2, 0);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 1483);
-            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.RowCount = 4;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(597, 142);
-            this.tableLayoutPanel11.TabIndex = 10;
-            this.toolTip1.SetToolTip(this.tableLayoutPanel11, "597, 198");
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Enabled = false;
-            this.label42.Location = new System.Drawing.Point(3, 129);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(41, 13);
-            this.label42.TabIndex = 0;
-            this.label42.Text = "label42";
-            this.label42.Visible = false;
-            // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.Color.SteelBlue;
-            this.tableLayoutPanel11.SetColumnSpan(this.textBox10, 2);
-            this.textBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox10.Location = new System.Drawing.Point(200, 32);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.ShortcutsEnabled = false;
-            this.textBox10.Size = new System.Drawing.Size(394, 94);
-            this.textBox10.TabIndex = 2;
-            this.textBox10.TabStop = false;
-            this.textBox10.Text = "Description of the game";
-            // 
-            // gameThumbPictureBox20
-            // 
-            this.gameThumbPictureBox20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gameThumbPictureBox20.Enabled = false;
-            this.gameThumbPictureBox20.Location = new System.Drawing.Point(3, 3);
-            this.gameThumbPictureBox20.Name = "gameThumbPictureBox20";
-            this.tableLayoutPanel11.SetRowSpan(this.gameThumbPictureBox20, 3);
-            this.gameThumbPictureBox20.Size = new System.Drawing.Size(191, 123);
-            this.gameThumbPictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gameThumbPictureBox20.TabIndex = 1;
-            this.gameThumbPictureBox20.TabStop = false;
-            this.gameThumbPictureBox20.Visible = false;
-            this.gameThumbPictureBox20.Click += new System.EventHandler(this.GamePictureBox_Click);
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(200, 0);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(62, 12);
-            this.label43.TabIndex = 3;
-            this.label43.Text = "Developer: ";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(200, 12);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(77, 13);
-            this.label44.TabIndex = 4;
-            this.label44.Text = "Release Year: ";
-            // 
-            // button10
-            // 
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(480, 3);
-            this.button10.Name = "button10";
-            this.tableLayoutPanel11.SetRowSpan(this.button10, 2);
-            this.button10.Size = new System.Drawing.Size(114, 23);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Steam Store";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.ColumnCount = 3;
@@ -1518,100 +1613,6 @@
             this.button12.TabIndex = 5;
             this.button12.Text = "Steam Store";
             this.button12.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel14
-            // 
-            this.tableLayoutPanel14.ColumnCount = 3;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel14.Controls.Add(this.label51, 0, 3);
-            this.tableLayoutPanel14.Controls.Add(this.textBox13, 1, 2);
-            this.tableLayoutPanel14.Controls.Add(this.gameThumbPictureBox23, 0, 0);
-            this.tableLayoutPanel14.Controls.Add(this.label52, 1, 0);
-            this.tableLayoutPanel14.Controls.Add(this.label53, 1, 1);
-            this.tableLayoutPanel14.Controls.Add(this.button13, 2, 0);
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 1927);
-            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 4;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(597, 142);
-            this.tableLayoutPanel14.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.tableLayoutPanel14, "597, 198");
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Enabled = false;
-            this.label51.Location = new System.Drawing.Point(3, 129);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(41, 13);
-            this.label51.TabIndex = 0;
-            this.label51.Text = "label51";
-            this.label51.Visible = false;
-            // 
-            // textBox13
-            // 
-            this.textBox13.BackColor = System.Drawing.Color.SteelBlue;
-            this.tableLayoutPanel14.SetColumnSpan(this.textBox13, 2);
-            this.textBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox13.Location = new System.Drawing.Point(200, 32);
-            this.textBox13.Multiline = true;
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.ShortcutsEnabled = false;
-            this.textBox13.Size = new System.Drawing.Size(394, 94);
-            this.textBox13.TabIndex = 2;
-            this.textBox13.TabStop = false;
-            this.textBox13.Text = "Description of the game";
-            // 
-            // gameThumbPictureBox23
-            // 
-            this.gameThumbPictureBox23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gameThumbPictureBox23.Enabled = false;
-            this.gameThumbPictureBox23.Location = new System.Drawing.Point(3, 3);
-            this.gameThumbPictureBox23.Name = "gameThumbPictureBox23";
-            this.tableLayoutPanel14.SetRowSpan(this.gameThumbPictureBox23, 3);
-            this.gameThumbPictureBox23.Size = new System.Drawing.Size(191, 123);
-            this.gameThumbPictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gameThumbPictureBox23.TabIndex = 1;
-            this.gameThumbPictureBox23.TabStop = false;
-            this.gameThumbPictureBox23.Visible = false;
-            this.gameThumbPictureBox23.Click += new System.EventHandler(this.GamePictureBox_Click);
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(200, 0);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(62, 12);
-            this.label52.TabIndex = 3;
-            this.label52.Text = "Developer: ";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(200, 12);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(77, 13);
-            this.label53.TabIndex = 4;
-            this.label53.Text = "Release Year: ";
-            // 
-            // button13
-            // 
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Image = ((System.Drawing.Image)(resources.GetObject("button13.Image")));
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(480, 3);
-            this.button13.Name = "button13";
-            this.tableLayoutPanel14.SetRowSpan(this.button13, 2);
-            this.button13.Size = new System.Drawing.Size(114, 23);
-            this.button13.TabIndex = 5;
-            this.button13.Text = "Steam Store";
-            this.button13.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel15
             // 
@@ -1801,7 +1802,7 @@
             // 
             // gameModeListBox
             // 
-            this.gameModeListBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gameModeListBox.BackColor = System.Drawing.SystemColors.Window;
             this.gameModeListBox.CheckOnClick = true;
             this.gameModeListBox.FormattingEnabled = true;
             this.gameModeListBox.Items.AddRange(new object[] {
@@ -1816,7 +1817,7 @@
             // 
             // specifierCheckedListBox
             // 
-            this.specifierCheckedListBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.specifierCheckedListBox.BackColor = System.Drawing.SystemColors.Window;
             this.specifierCheckedListBox.CheckOnClick = true;
             this.specifierCheckedListBox.FormattingEnabled = true;
             this.specifierCheckedListBox.Items.AddRange(new object[] {
@@ -2142,13 +2143,35 @@
             this.checkBox1.Visible = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(73, 21);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(98, 16);
+            this.label60.TabIndex = 21;
+            this.label60.Text = "NOT ACTIVE";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.Location = new System.Drawing.Point(471, 21);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(98, 16);
+            this.label61.TabIndex = 22;
+            this.label61.Text = "NOT ACTIVE";
+            // 
             // StartSearchPage
             // 
             this.AcceptButton = this.SearchButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(636, 193);
+            this.Controls.Add(this.label61);
+            this.Controls.Add(this.label60);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
@@ -2167,10 +2190,16 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "StartSearchPage";
-            this.Text = "Start Search Page";
+            this.Text = "Tag filter \"holder form\"";
             this.Load += new System.EventHandler(this.StartSearchPage_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.minimumRank)).EndInit();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox20)).EndInit();
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.tableLayoutPanel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox23)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox1)).EndInit();
@@ -2201,18 +2230,12 @@
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox19)).EndInit();
-            this.tableLayoutPanel11.ResumeLayout(false);
-            this.tableLayoutPanel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox20)).EndInit();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox21)).EndInit();
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox22)).EndInit();
-            this.tableLayoutPanel14.ResumeLayout(false);
-            this.tableLayoutPanel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox23)).EndInit();
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameThumbPictureBox24)).EndInit();
@@ -2388,6 +2411,8 @@
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
     }
 }
 
