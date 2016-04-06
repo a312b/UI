@@ -1,6 +1,6 @@
 ﻿namespace DummyClassSolution
 {
-    partial class StartSearchPage
+    partial class TagFilterHolder
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartSearchPage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TagFilterHolder));
             this.steamIdTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.genreCheckListBox = new System.Windows.Forms.CheckedListBox();

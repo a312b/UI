@@ -1,21 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using DummyClassSolution.Properties;
 using SteamSharp.steamStore.models;
 
 namespace DummyClassSolution
 {
     public partial class SteamTheme : Form
     {
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HTCAPTION = 0x2;
+        public const int WmNclbuttondown = 0xA1;
+        public const int Htcaption = 0x2;
+        public static string DevKey = Settings.Default.DevKey;
         private readonly SteamSharp.SteamSharp _steamSharpTest = new SteamSharp.SteamSharp();
-        public static string devKey = Properties.Settings.Default.DevKey;
-        private int _combinedRank;
 
         public SteamTheme()
         {
@@ -26,9 +27,9 @@ namespace DummyClassSolution
         public static extern bool ReleaseCapture();
 
         [DllImport("User32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        public static extern int SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -38,39 +39,43 @@ namespace DummyClassSolution
             WindowState = FormWindowState.Minimized;
         }
 
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        //Makes the form dragable - the panel used makes the form act like a border.
+        private void Form_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+                SendMessage(Handle, WmNclbuttondown, Htcaption, 0);
             }
         }
-
 
         private void steamIdTextBox_Click(object sender, EventArgs e)
         {
             steamIdTextBox.Text = "";
         }
 
-        private void GenerateFilteredGameList()
+        //Where the game list is made by calling SteamSharp.GameListByIds on a set app ID 
+        //and iterates over all the games to then call functions LoadHeaderImages and LoadGameInfo displaying the game date.
+        //A "roundCount" is kept to determine how far we've gotten.
+        private void GenerateGameList()
         {
-            var roundCount = 0;
-            var steamId = steamIdTextBox.Text.ToLower();
+            int roundCount = 0;
+            string steamId = steamIdTextBox.Text.ToLower(); //not used
             string[] idArray =
             {
                 "340", "280", "570", "80", "240", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
                 "10180"
-            };//150, 22380, 377160 == nullreference på htmlagility //340, 570 == nullreference på prisen (der findes f.eks. "price_in_cents_with_discount" i stedet)
+            };
+            //150, 22380, 377160 == nullreference på htmlagility 
+            //340, 570 == nullreference på prisen (der findes f.eks. "price_in_cents_with_discount" i stedet)
 
-            var formGameList = _steamSharpTest.GameListByIds(idArray);
+            List<SteamStoreGame> formGameList = _steamSharpTest.GameListByIds(idArray);
             if (formGameList != null)
             {
                 Size = new Size(Size.Width, 621);
                 ClearGameListBox();
-                foreach (var game in formGameList)
+                foreach (SteamStoreGame game in formGameList)
                 {
-                    _combinedRank = 0;
                     LoadHeaderImages(game.data.steam_appid, roundCount);
                     LoadGameInfo(game, roundCount);
                     roundCount++;
@@ -78,9 +83,11 @@ namespace DummyClassSolution
             }
         }
 
+        //Takes the current game and the roundCount (iteration#) ands sets the appropriate data 
+        //in the specified array of labels and richtextboxes
         private void LoadGameInfo(SteamStoreGame game, int roundCount)
         {
-            var SB = new StringBuilder();
+            StringBuilder SB = new StringBuilder();
             Label[] tagLabels =
             {
                 label1, label9, label14, label19, label24, label29, label34, label39, label44, label49,
@@ -116,7 +123,7 @@ namespace DummyClassSolution
             {
                 gameLabels[roundCount].Text = game.data.name;
                 gameLabels[roundCount].Visible = true;
-                foreach (var developer in game.data.developers)
+                foreach (string developer in game.data.developers)
                     SB.Append(developer + ", ");
                 devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
                 descriptionBoxes[roundCount].Text = game.data.detailed_description;
@@ -131,7 +138,7 @@ namespace DummyClassSolution
                 }
                 priceLabels[roundCount].Visible = true;
                 SB.Clear();
-                foreach (var tag in game.data.tags)
+                foreach (SteamStoreGame.Tag tag in game.data.tags)
                     SB.Append(tag.description + ", ");
                 tagLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
                 tagLabels[roundCount].Visible = true;
@@ -139,6 +146,7 @@ namespace DummyClassSolution
             }
         }
 
+        //Clears the viwed game list box, to make sure its clean for a new recommendation computation
         private void ClearGameListBox()
         {
             PictureBox[] pictureBoxes =
@@ -152,7 +160,7 @@ namespace DummyClassSolution
                 label46, label51, label56
             };
 
-            foreach (var pb in pictureBoxes)
+            foreach (PictureBox pb in pictureBoxes)
             {
                 if (pb.Image != null)
                 {
@@ -167,6 +175,7 @@ namespace DummyClassSolution
             flowLayoutPanel1.Visible = false;
         }
 
+        //Loads the appropriate image for the corresponding app ID.
         private void LoadHeaderImages(int appId, int pb)
         {
             PictureBox[] pictureBoxes =
@@ -186,10 +195,11 @@ namespace DummyClassSolution
             }
         }
 
+        //Resizes the TableLayoutPanels and makes sure the labels that are hidden are in the correct visible state.
         private void ResizeTablePanels(TableLayoutPanel sender)
         {
-            var full = new Size(646, 164);
-            var regular = new Size(646, 104);
+            Size full = new Size(646, 164);
+            Size regular = new Size(646, 104);
 
             sender.Size = sender.Size != full ? full : regular;
             Label[] hiddenLabels =
@@ -199,22 +209,22 @@ namespace DummyClassSolution
                 label43, label42, label48, label47, label53, label52, label58, label57
             };
 
-            foreach (var richTextBox in sender.Controls.OfType<RichTextBox>())
+            foreach (RichTextBox richTextBox in sender.Controls.OfType<RichTextBox>())
             {
                 richTextBox.Visible = richTextBox.Visible == false;
             }
-            foreach (var storeBtn in sender.Controls.OfType<Button>())
+            foreach (Button storeBtn in sender.Controls.OfType<Button>())
             {
                 storeBtn.Visible = storeBtn.Visible == false;
             }
-            foreach (var pictureBox in sender.Controls.OfType<PictureBox>())
+            foreach (PictureBox pictureBox in sender.Controls.OfType<PictureBox>())
             {
-                var tpl = pictureBox.Parent as TableLayoutPanel;
+                TableLayoutPanel tpl = pictureBox.Parent as TableLayoutPanel;
                 tpl.SetRowSpan(pictureBox, tpl.GetRowSpan(pictureBox) == 3 ? 4 : 3);
             }
-            foreach (var label in sender.Controls.OfType<Label>())
+            foreach (Label label in sender.Controls.OfType<Label>())
             {
-                foreach (var hiddenLabel in hiddenLabels)
+                foreach (Label hiddenLabel in hiddenLabels)
                 {
                     if (label.Name == hiddenLabel.Name)
                     {
@@ -224,14 +234,17 @@ namespace DummyClassSolution
             }
         }
 
+        //Button that takes you to steam store by opening link with app ID. 
+        //The app ID is retrived by finding the button's parents control's picturebox 
+        //and retrieving it from the image location as any digit in the link.
         private void btnSteamStore1_Click(object sender, EventArgs e)
         {
-            var btn = sender as Button;
+            Button btn = sender as Button;
 
-            var currentAppId = "";
-            foreach (var pb in btn.Parent.Controls.OfType<PictureBox>())
+            string currentAppId = "";
+            foreach (PictureBox pb in btn.Parent.Controls.OfType<PictureBox>())
             {
-                foreach (var c in pb.ImageLocation)
+                foreach (char c in pb.ImageLocation)
                 {
                     if (char.IsDigit(c))
                     {
@@ -245,12 +258,13 @@ namespace DummyClassSolution
 
         private void button3_Click(object sender, EventArgs e)
         {
-            GenerateFilteredGameList();
+            GenerateGameList();
         }
+
         //Event: Clicking on the specified object calls the TLP converter and 
         private void object_Click(object sender, EventArgs e)
         {
-            var tableObject = tplConverter(sender) as TableLayoutPanel;
+            TableLayoutPanel tableObject = tplConverter(sender) as TableLayoutPanel;
             ResizeTablePanels(tableObject);
         }
 
@@ -258,24 +272,25 @@ namespace DummyClassSolution
         //converting the object clicked (PictureBox, TextBox or TableLayoutpanel) to a TLP
         private object tplConverter(object sender)
         {
-            var tableClickTpl = sender as TableLayoutPanel;
+            TableLayoutPanel tableClickTpl = sender as TableLayoutPanel;
             if (tableClickTpl != null) return tableClickTpl;
-            var pbClick = sender as PictureBox;
+            PictureBox pbClick = sender as PictureBox;
             if (pbClick == null)
             {
-                var labelClick = sender as Label;
+                Label labelClick = sender as Label;
                 if (labelClick == null)
                 {
-                    var textBoxClick = sender as RichTextBox;
-                    var textBoxTpl = textBoxClick.Parent as TableLayoutPanel;
+                    RichTextBox textBoxClick = sender as RichTextBox;
+                    TableLayoutPanel textBoxTpl = textBoxClick.Parent as TableLayoutPanel;
                     return textBoxTpl;
                 }
-                var labelTpl = labelClick.Parent as TableLayoutPanel;
+                TableLayoutPanel labelTpl = labelClick.Parent as TableLayoutPanel;
                 return labelTpl;
             }
-            var pbtpl = pbClick.Parent as TableLayoutPanel;
+            TableLayoutPanel pbtpl = pbClick.Parent as TableLayoutPanel;
             return pbtpl;
         }
+
         //Prompts the user for a steam API key obtained at http://steamcommunity.com/dev/apikey
         private void btnDevKey_Click(object sender, EventArgs e)
         {

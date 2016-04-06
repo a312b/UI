@@ -1,25 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DummyClassSolution.Properties;
 using static DummyClassSolution.SteamTheme;
 
 namespace DummyClassSolution
 {
     public partial class DevPrompt : Form
     {
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HTCAPTION = 0x2;
+        public const int WmNclbuttondown = 0xA1;
+        public const int Htcaption = 0x2;
+
         public DevPrompt()
         {
             InitializeComponent();
         }
+
         [DllImport("User32.dll")]
         public static extern bool ReleaseCapture();
 
@@ -28,18 +24,18 @@ namespace DummyClassSolution
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            devKey = devKeyTextBox.Text;
+            DevKey = devKeyTextBox.Text;
             if (saveCheckBox1.Checked)
             {
-                Properties.Settings.Default.DevKey = devKey;
-                Properties.Settings.Default.Save(); // Saves settings in application configuration file
+                Settings.Default.DevKey = DevKey;
+                Settings.Default.Save(); // Saves settings in application configuration file
             }
             Close();
         }
 
         private void DevPrompt_Load(object sender, EventArgs e)
         {
-            devKeyTextBox.Text = Properties.Settings.Default.DevKey;
+            devKeyTextBox.Text = Settings.Default.DevKey;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -47,17 +43,12 @@ namespace DummyClassSolution
             Close();
         }
 
-        private void btnMin_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         private void DevPrompt_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+                SendMessage(Handle, WmNclbuttondown, Htcaption, 0);
             }
         }
     }

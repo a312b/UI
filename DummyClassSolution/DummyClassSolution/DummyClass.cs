@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 
+//NOTICE:
+//No longer the used data class, but kept alive for legacy code
+//!
 namespace DummyClassSolution
 {
     internal class DummyClass
