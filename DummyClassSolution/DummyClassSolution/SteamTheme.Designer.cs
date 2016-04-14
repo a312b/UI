@@ -36,7 +36,7 @@
             this.btnDevKey = new System.Windows.Forms.Button();
             this.steamIdTextBox = new System.Windows.Forms.TextBox();
             this.btnStart = new System.Windows.Forms.Button();
-            this.btnSteamStore = new System.Windows.Forms.Button();
+            this.timeElapsedLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
@@ -48,6 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnSteamStore = new System.Windows.Forms.Button();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -159,6 +160,7 @@
             this.label60 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
             this.devToolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -240,6 +242,7 @@
             this.btnDevKey.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDevKey.BackgroundImage")));
             this.btnDevKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDevKey.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDevKey.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.btnDevKey.FlatAppearance.BorderSize = 0;
             this.btnDevKey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnDevKey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -281,26 +284,17 @@
             this.btnStart.TabStop = false;
             this.btnStart.Text = "Recommend";
             this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.button3_Click);
+            this.btnStart.Click += new System.EventHandler(this.btnRecommend_Click);
             // 
-            // btnSteamStore
+            // timeElapsedLabel
             // 
-            this.btnSteamStore.AutoSize = true;
-            this.btnSteamStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSteamStore.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSteamStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.btnSteamStore.Image = ((System.Drawing.Image)(resources.GetObject("btnSteamStore.Image")));
-            this.btnSteamStore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSteamStore.Location = new System.Drawing.Point(243, 89);
-            this.btnSteamStore.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
-            this.btnSteamStore.Name = "btnSteamStore";
-            this.btnSteamStore.Size = new System.Drawing.Size(90, 12);
-            this.btnSteamStore.TabIndex = 6;
-            this.btnSteamStore.Text = "     Steam Store";
-            this.btnSteamStore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSteamStore.UseVisualStyleBackColor = true;
-            this.btnSteamStore.Visible = false;
-            this.btnSteamStore.Click += new System.EventHandler(this.btnSteamStore1_Click);
+            this.timeElapsedLabel.AutoSize = true;
+            this.timeElapsedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeElapsedLabel.Location = new System.Drawing.Point(9, 609);
+            this.timeElapsedLabel.Name = "timeElapsedLabel";
+            this.timeElapsedLabel.Size = new System.Drawing.Size(59, 12);
+            this.timeElapsedLabel.TabIndex = 14;
+            this.timeElapsedLabel.Text = "Time elapsed";
             // 
             // titleLabel
             // 
@@ -399,6 +393,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.WaitOnLoad = true;
             this.pictureBox1.Click += new System.EventHandler(this.object_Click);
             // 
             // label2
@@ -482,6 +477,25 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Price/€";
             this.label3.Visible = false;
+            // 
+            // btnSteamStore
+            // 
+            this.btnSteamStore.AutoSize = true;
+            this.btnSteamStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSteamStore.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSteamStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.btnSteamStore.Image = ((System.Drawing.Image)(resources.GetObject("btnSteamStore.Image")));
+            this.btnSteamStore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSteamStore.Location = new System.Drawing.Point(243, 89);
+            this.btnSteamStore.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.btnSteamStore.Name = "btnSteamStore";
+            this.btnSteamStore.Size = new System.Drawing.Size(90, 12);
+            this.btnSteamStore.TabIndex = 6;
+            this.btnSteamStore.Text = "     Steam Store";
+            this.btnSteamStore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSteamStore.UseVisualStyleBackColor = true;
+            this.btnSteamStore.Visible = false;
+            this.btnSteamStore.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // tableLayoutPanel23
             // 
@@ -2148,6 +2162,11 @@
             // 
             this.devToolTip1.AutomaticDelay = 200;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // SteamTheme
             // 
             this.AcceptButton = this.btnStart;
@@ -2155,6 +2174,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(696, 621);
+            this.Controls.Add(this.timeElapsedLabel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.panel1);
@@ -2342,6 +2362,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
         private System.Windows.Forms.Button btnDevKey;
         private System.Windows.Forms.ToolTip devToolTip1;
+        private System.Windows.Forms.Label timeElapsedLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

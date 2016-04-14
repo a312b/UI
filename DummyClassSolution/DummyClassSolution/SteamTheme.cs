@@ -5,9 +5,13 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
+using System.Timers;
 using System.Windows.Forms;
 using DummyClassSolution.Properties;
 using SteamSharp.steamStore.models;
+
+//requires SteamSharp
 
 namespace DummyClassSolution
 {
@@ -17,6 +21,7 @@ namespace DummyClassSolution
         public const int Htcaption = 0x2;
         public static string DevKey = Settings.Default.DevKey;
         private readonly SteamSharp.SteamSharp _steamSharpTest = new SteamSharp.SteamSharp();
+        public static int ElapsedTime = 0;
 
         public SteamTheme()
         {
@@ -76,6 +81,7 @@ namespace DummyClassSolution
                 ClearGameListBox();
                 foreach (SteamStoreGame game in formGameList)
                 {
+                    //ThreadPool.QueueUserWorkItem(LoadHeaderImages(game.data.steam_appid, roundCount));
                     LoadHeaderImages(game.data.steam_appid, roundCount);
                     LoadGameInfo(game, roundCount);
                     roundCount++;
@@ -126,7 +132,7 @@ namespace DummyClassSolution
                 foreach (string developer in game.data.developers)
                     SB.Append(developer + ", ");
                 devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
-                descriptionBoxes[roundCount].Text = game.data.detailed_description;
+                descriptionBoxes[roundCount].Text = game.data.detailed_description; //detailed
                 releaseLabels[roundCount].Text = game.data.release_date.date;
                 try //error handeling while price can return null
                 {
@@ -187,6 +193,7 @@ namespace DummyClassSolution
             {
                 pictureBoxes[pb].Enabled = true;
                 pictureBoxes[pb].Visible = true;
+
                 pictureBoxes[pb].Load("http://cdn.akamai.steamstatic.com/steam/apps/" + appId + "/header.jpg");
             }
             catch (Exception e)
@@ -256,9 +263,26 @@ namespace DummyClassSolution
             Process.Start("http://store.steampowered.com/app/" + currentAppId);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnRecommend_Click(object sender, EventArgs e)
         {
+            ElapsedTime = 0;
+            System.Timers.Timer aTimer = new System.Timers.Timer();
+            aTimer.Elapsed += new ElapsedEventHandler(timer1_Tick);
+            aTimer.Interval = 1000;
+            //aTimer.Enabled = true;
+            aTimer.Start();
+
+            Cursor.Current = Cursors.WaitCursor;
             GenerateGameList();
+            Cursor.Current = Cursors.Default;
+
+            timeElapsedLabel.Text = "Time elapsed: " + ElapsedTime + " sec";
+            aTimer.Dispose();
+        }
+
+        private void AllDone()
+        {
+            timeElapsedLabel.Text = ElapsedTime.ToString();
         }
 
         //Event: Clicking on the specified object calls the TLP converter and 
@@ -296,6 +320,11 @@ namespace DummyClassSolution
         {
             Form devPrompt = new DevPrompt();
             devPrompt.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ElapsedTime++;
         }
     }
 }
