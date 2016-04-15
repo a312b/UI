@@ -248,15 +248,13 @@ namespace SteamUI
         {
             Button btn = sender as Button;
 
-            string currentAppId = "";
-            foreach (PictureBox pb in btn.Parent.Controls.OfType<PictureBox>())
+            var currentAppId = "";
+            PictureBox pb = btn.Parent.Controls.OfType<PictureBox>().First();
+            foreach (var c in pb.ImageLocation)
             {
-                foreach (char c in pb.ImageLocation)
+                if (char.IsDigit(c))
                 {
-                    if (char.IsDigit(c))
-                    {
-                        currentAppId += c;
-                    }
+                    currentAppId += c;
                 }
             }
 
