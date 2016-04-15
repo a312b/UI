@@ -3,7 +3,7 @@
 //NOTICE:
 //No longer the used data class, but kept alive for legacy code
 //!
-namespace DummyClassSolution
+namespace SteamUI
 {
     internal class DummyClass
     {

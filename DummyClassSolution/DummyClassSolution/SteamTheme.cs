@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
-using DummyClassSolution.Properties;
 using SteamSharp.steamStore.models;
+using SteamUI.Properties;
 
 //requires SteamSharp
 
-namespace DummyClassSolution
+namespace SteamUI
 {
     public partial class SteamTheme : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace DummyClassSolution
+﻿namespace SteamUI
 {
     partial class TagFilterHolder
     {

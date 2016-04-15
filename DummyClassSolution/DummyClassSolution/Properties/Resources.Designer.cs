@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DummyClassSolution.Properties {
+namespace SteamUI.Properties {
     using System;
     
     

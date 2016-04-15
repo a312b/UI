@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 // ReSharper disable SuggestVarOrType_SimpleTypes
 
-namespace DummyClassSolution
+namespace SteamUI
 {
     public partial class TagFilterHolder : Form
     {

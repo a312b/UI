@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using DummyClassSolution.Properties;
-using static DummyClassSolution.SteamTheme;
+using SteamUI.Properties;
+using static SteamUI.SteamTheme;
 
-namespace DummyClassSolution
+namespace SteamUI
 {
     public partial class DevPrompt : Form
     {
