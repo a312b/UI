@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="DevKey" Type="System.String" Scope="User">
-      <Value Profile="(Default)">null</Value>
+      <Value Profile="(Default)">API Key</Value>
     </Setting>
   </Settings>
 </SettingsFile>
